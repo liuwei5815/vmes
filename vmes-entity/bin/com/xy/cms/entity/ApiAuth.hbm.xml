@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.ApiAuth" dynamic-insert="true" dynamic-update="true" table="sys_api_auth" >
+		<cache usage="read-write" region="common"/>
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		
+		<property name="type" type="java.lang.Integer">
+			<column name="type" length="1"/>
+		</property>
+		
+		<many-to-one name="Api" class="com.xy.cms.entity.Api" column="api_id"/>
+	</class>
+</hibernate-mapping>

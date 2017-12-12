@@ -1,0 +1,21 @@
+<!-- 
+	此配置文件为定时任务配置,可以实现特定时间或固定间隔内的调度任务
+	如果需要配置定时任务，需增加<periodTask/>元素
+	下面对<periodTask/>元素中属性做详细介绍
+	type: 定义调度任务的执行周期类型，type取值有四种，分别为:day,hour,second,minute
+		  例如需要创建一个每天都需执行的任务，type="day"
+	action: 调度任务的包路径
+ -->
+
+
+<asynchronized>
+	
+	<!-- 每隔10Min将客户意向放入任务队列 -->
+	
+	<!--<periodTask type="minute" min="10" action="com.ovt.schedule.GenerateTask"/>-->
+	<!-- <periodTask type="second" sec="30" action="com.whty.splt.thread.UpdateNewsClickTask"/> -->
+	<!--<periodTask type="hour" hour="12" action="com.whty.splt.thread.UpdateNewsClickTask"/>-->
+	<!-- 每天3点执行更新信息点击量任务 -->
+	<!-- <periodTask type="day" day="1" hour="3" min="0" action="com.whty.splt.thread.UpdateNewsClickTask"/>  -->
+
+</asynchronized>

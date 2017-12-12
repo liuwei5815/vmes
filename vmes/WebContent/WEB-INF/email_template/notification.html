@@ -1,0 +1,79 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>客户'${name}'申请了贷款，请及时跟踪处理</title>
+<style type="text/css">
+<!--
+td {
+	font-size: 12px;
+}
+body {
+	font-size: 12px;
+}
+.STYLE1 {	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 14px;
+}
+.STYLE2 {color: #FFFFFF}
+.line-24 {	border-top-width: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 0px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #999999;
+	border-right-color: #999999;
+	border-bottom-color: #999999;
+	border-left-color: #999999;
+	font-size:14px;
+	line-height:20px;
+}
+.line3 {	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: 999999;
+	border-right-color: #999999;
+	border-bottom-color: #999999;
+	border-left-color: #999999;
+}
+-->
+</style>
+</head>
+
+<body>
+<table height="354" cellspacing="0" cellpadding="15" width="778" align="center" border="0">
+    <tbody>
+        <tr>
+            <td class="line-24" valign="top" align="left">
+            <strong style="FONT-SIZE: 14px; COLOR: #3c5b9c">客户详情情况：</strong><br />
+            <font face="Arial">客户 ：[${name}]</font><br />
+            <font face="Arial"> 性别:${sex}</font><br />
+           	<font face="Arial"> 联系电话:${tel}</font><br />
+           	<font face="Arial"> 贷款金额:${loanAmount}万元</font><br />
+           	<font face="Arial"> 是否有房:${hasHouse}</font><br />
+           	<font face="Arial"> 是否有车:${hasCar}</font><br />
+           	<font face="Arial"> 月收入 :${income}</font><br />
+           	<font face="Arial"> 发薪方式 :${payWay}</font><br />
+           	<font face="Arial"> 工作类型:${job}</font><br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table height="15" cellspacing="0" cellpadding="0" width="778" align="center" border="0">
+    <tbody>
+        <tr>
+            <td valign="bottom" width="20">&nbsp;</td>
+            <td class="line3" height="15">&nbsp;</td>
+            <td valign="bottom" width="20">&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+<html>

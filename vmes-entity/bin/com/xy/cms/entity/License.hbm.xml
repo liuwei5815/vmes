@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.License" table="sys_license" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="expiredDate" type="java.sql.Date">
+            <column name="expireddate">
+                <comment>有效时间</comment>
+            </column>
+        </property>
+        <property name="viableAcct" type="java.lang.String">
+            <column name="viable_acct">
+                <comment>账号数量</comment>
+            </column>
+        </property>
+        <property name="acctCtrl" type="java.lang.String">
+            <column name="acct_ctrl">
+                <comment>控制范围</comment>
+            </column>
+        </property>
+        <property name="webNum" type="java.lang.Integer">
+            <column name="webNum">
+                <comment>控制范围</comment>
+            </column>
+        </property>
+        <property name="appNum" type="java.lang.Integer">
+            <column name="appNum">
+                <comment>控制范围</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

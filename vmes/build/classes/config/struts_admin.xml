@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.multipart.maxSize" value="10485760"/> 
+	<package name="admin" extends="main" namespace="/admin" strict-method-invocation="false">
+	<default-interceptor-ref name="adminInterceptorStack"></default-interceptor-ref> 
+
+	
+	<!-- 图片上传 -->
+	<action name="uploadImage" class="com.xy.cms.action.system.common.UploadImageAction">
+		<result>/admin/jsp/common/iframe_upload.jsp</result>
+	</action>
+	<!-- 图片裁剪 -->
+	<action name="jcrop" class="com.xy.cms.action.system.common.JcropAction">
+		<result>/admin/jsp/common/jcrop/jcrop.jsp</result>
+	</action>
+	<!-- 系统登陆 -->	
+	<action name="login" class="com.xy.cms.action.LoginAction" >
+		<result name="login">/login.jsp</result>
+		
+		<result name="index">/admin/jsp/index.jsp</result>
+		<result name="pwd">/admin/jsp/pwd.jsp</result>
+		<result name="leftmenu">/admin/jsp/menu.jsp</result>
+		<result name="syscfg">/admin/jsp/system/syscfg.jsp</result>
+		<result name="frame_skin">/admin/jsp/frame_skin.jsp</result>
+	</action>
+	
+	<!-- 表管理 -->
+	<action name="sys_tables" class="com.xy.cms.action.system.TablesAction">
+	     <result name="init">/admin/jsp/system/table/init.jsp</result>
+	     <result name="add">/admin/jsp/system/table/add.jsp</result>
+	     <result name="edit">/admin/jsp/system/table/edit.jsp</result>
+	     <result name="list">/admin/jsp/system/table/list.jsp</result>
+	     <result name="menu_create">/admin/jsp/system/table/create.jsp</result>
+	     <result name="addRelation">/admin/jsp/system/table/relation.jsp</result>
+	     <result name="editRelation">/admin/jsp/system/table/relation_edit.jsp</result>
+	</action>
+	
+	<!-- 账号管理 -->
+	<action name="admin" class="com.xy.cms.action.system.AdminAction">
+	     <result name="init">/admin/jsp/system/admin/init.jsp</result>
+	     <result name="add">/admin/jsp/system/admin/add.jsp</result>
+	     <result name="edit">/admin/jsp/system/admin/edit.jsp</result>
+	     <result name="query">/admin/jsp/system/admin/list.jsp</result>
+	</action>
+	<!-- 系统配置 -->
+	<action name="sys_setting" class="com.xy.cms.action.system.AccountSettingAction">
+	     <result name="init">/admin/jsp/system/accoutSetting/init.jsp</result>
+	</action>
+	<!-- 角色管理 -->
+	<action name="role" class="com.xy.cms.action.system.RoleAction">
+	     <result name="init">/admin/jsp/system/role/init.jsp</result>
+	     <result name="add">/admin/jsp/system/role/add.jsp</result>
+	     <result name="edit">/admin/jsp/system/role/edit.jsp</result>
+	     <result name="list">/admin/jsp/system/role/list.jsp</result>
+	</action>
+	<!-- 客户管理 -->
+	<action name="customer" class="com.xy.cms.action.system.CustomerAction">
+	     <result name="init">/admin/jsp/system/customer/init.jsp</result>
+	     <result name="add">/admin/jsp/system/customer/add.jsp</result>
+	     <result name="edit">/admin/jsp/system/customer/edit.jsp</result>
+	     <result name="list">/admin/jsp/system/customer/list.jsp</result>
+	     <result name="import">/admin/jsp/system/customer/import.jsp</result>
+	</action>
+	<!-- 权限管理 -->
+	<action name="power" class="com.xy.cms.action.system.PowerAction">
+
+	     <result name="init">/admin/jsp/system/power/init.jsp</result>
+	     <result name="add">/admin/jsp/system/power/add.jsp</result>
+	     <result name="edit">/admin/jsp/system/power/edit.jsp</result>
+	     <result name="query">/admin/jsp/system/power/list.jsp</result>
+	     
+	     <result name="rolepower">/admin/jsp/system/power/rolepower.jsp</result>
+	</action>
+	
+	<!-- 业务模型操作 -->
+	<action name="model" class="com.xy.cms.action.system.ModelAction">
+		<result name="init">/admin/jsp/system/model/init.jsp</result>
+		<result name="add">/admin/jsp/system/model/add.jsp</result>
+		<result name="add_add">/admin/jsp/system/model/add_add.jsp</result>
+		<result name="query">/admin/jsp/system/model/list.jsp</result>
+		<result name="tree">/admin/jsp/system/model/tree_init.jsp</result>
+		<result name="edit">/admin/jsp/system/model/edit.jsp</result>
+		<result name="add_edit">/admin/jsp/system/model/edit.jsp</result>
+	</action>
+	<!-- 派工单 -->
+	<action name="dispatch" class="com.xy.cms.action.DispatchOrderAction">
+		<result name="init">/admin/jsp/system/dispatchOrder/init.jsp</result>
+		<result name="list_new">/admin/jsp/system/dispatchOrder/list_new.jsp</result>
+		<result name="add">/admin/jsp/system/dispatchOrder/add.jsp</result>
+		<result name="edit">/admin/jsp/system/dispatchOrder/edit.jsp</result>
+		<result name="printDis">/admin/jsp/system/dispatchOrder/printDis.jsp</result>
+		<result name="claimDetail">/admin/jsp/system/dispatchOrder/claimDetail.jsp</result>
+		<result name="changeWorkPlan">/admin/jsp/system/dispatchOrder/changeWorkPlan.jsp</result>
+	</action>
+	<!-- 订单 -->
+	<action name="orders" class="com.xy.cms.action.system.OrdersAction">
+		<result name="init">/admin/jsp/system/orders/init.jsp</result>
+		<result name="list">/admin/jsp/system/orders/list.jsp</result>
+		<result name="add">/admin/jsp/system/orders/add.jsp</result>
+		<result name="addDeatil">/admin/jsp/system/orders/addDeatil.jsp</result>
+		<result name="editOrders">/admin/jsp/system/orders/editOrders.jsp</result>
+		<result name="editOrdersDetail">/admin/jsp/system/orders/editOrdersDetail.jsp</result>
+		<result name="editDetailNum">/admin/jsp/system/orders/editOrderDetailNum.jsp</result>
+		<result name="tree">/admin/jsp/system/orders/tree.jsp</result>
+		<result name="addCustomer">/admin/jsp/system/orders/addCustomer.jsp</result>
+	</action>
+	
+	<!-- 设备信息配置 -->
+	<action name="equipment" class="com.xy.cms.action.system.EquipmentAction">
+		<result name="init">/admin/jsp/system/equipment/init.jsp</result>
+		<result name="list">/admin/jsp/system/equipment/list.jsp</result>
+		<result name="add">/admin/jsp/system/equipment/add.jsp</result>
+		<result name="edit">/admin/jsp/system/equipment/edit.jsp</result>
+		<result name="import">/admin/jsp/system/equipment/import.jsp</result>
+		<result name="print">/admin/jsp/system/equipment/print.jsp</result>
+		<result name="SUCCESS">/admin/jsp/system/equipment/eqImgupload.jsp</result>
+		<result name="baseinfor_init">/admin/jsp/system/equipment/baseInformation/init.jsp</result>
+		<result name="baseInfor_query">/admin/jsp/system/equipment/baseInformation/bf_list.jsp</result>
+		<result name="oparainforma_Init">/admin/jsp/system/equipment/operationInformation/oper_init.jsp</result>
+		<result name="operInfor_query">/admin/jsp/system/equipment/operationInformation/operinf_list.jsp</result>
+		<result name="oper_dialog">/admin/jsp/system/equipment/operationInformation/oper_dialog.jsp</result>
+		<result name="oper_dialog_init">/admin/jsp/system/equipment/operationInformation/oper_dialog_init.jsp</result>
+		<result name="efftinforma_Init">/admin/jsp/system/equipment/effectiveinformation/efft_init.jsp</result>
+		<result name="efftInfor_query">/admin/jsp/system/equipment/effectiveinformation/efft_list.jsp</result>
+		<result name="efftinforma_dialog">/admin/jsp/system/equipment/effectiveinformation/efft_dialog.jsp</result>
+		<result name="efftinforma_dialog2">/admin/jsp/system/equipment/effectiveinformation/efft_dialog2.jsp</result>
+		<result name="capa_Init">/admin/jsp/system/equipment/capacityInformation/capa_init.jsp</result>
+		<result name="capaInfor_query">/admin/jsp/system/equipment/capacityInformation/capainf_list.jsp</result>
+		<result name="capainforma_dialog">/admin/jsp/system/equipment/capacityInformation/capa_dialog.jsp</result>
+		<result name="capainforma_dialog2">/admin/jsp/system/equipment/capacityInformation/capa_dialog2.jsp</result>
+		<result name="other_Init">/admin/jsp/system/equipment/otherInformation/other_init.jsp</result>
+		<result name="otherInfor_query">/admin/jsp/system/equipment/otherInformation/otherinf_list.jsp</result>
+	
+		<result name="equipmentType">/admin/jsp/system/equipment/auxiliaryTree/equipmentType.jsp</result>
+		<result name="department">/admin/jsp/system/equipment/auxiliaryTree/department.jsp</result>
+		<result name="recordInit">/admin/jsp/system/equipment/operationInformation/record_init.jsp</result>
+		<result name="recordList">/admin/jsp/system/equipment/operationInformation/record_list.jsp</result>
+	</action>
+	<!-- 物料信息配置 -->
+	<action name="material" class="com.xy.cms.action.system.MaterialAction">
+		<result name="init">/admin/jsp/system/material/init.jsp</result>
+		<result name="list">/admin/jsp/system/material/list.jsp</result>
+		<result name="add">/admin/jsp/system/material/add.jsp</result>
+		<result name="edit">/admin/jsp/system/material/edit.jsp</result>
+		<result name="import">/admin/jsp/system/material/import.jsp</result>
+		<result name="print">/admin/jsp/system/material/print.jsp</result>
+	</action>
+	<!-- 产品信息配置 -->
+	<action name="product" class="com.xy.cms.action.system.ProductAction">
+		<result name="init">/admin/jsp/system/product/init.jsp</result>
+		<result name="list">/admin/jsp/system/product/list.jsp</result>
+		<result name="add">/admin/jsp/system/product/add.jsp</result>
+		<result name="edit">/admin/jsp/system/product/edit.jsp</result>
+		<result name="import">/admin/jsp/system/product/import.jsp</result>
+		<result name="tree">/admin/jsp/system/product/productUnit/tree.jsp</result>
+		<result name="tree_init">/admin/jsp/system/product/productUnit/tree_init.jsp</result>
+		<result name="addUnit">/admin/jsp/system/product/productUnit/add.jsp</result>
+		<result name="editUnit">/admin/jsp/system/product/productUnit/edit.jsp</result>
+		<result name="suc">/admin/jsp/system/orders/tree.jsp</result>
+		
+	</action>
+	<!-- 日志查看 -->
+	<action name="sys_log" class="com.xy.cms.action.system.SysLogAction">
+		<result name="init">/admin/jsp/system/syslog/init.jsp</result>
+		<result name="list">/admin/jsp/system/syslog/list.jsp</result>
+	</action>
+	
+	<!-- 系统配置管理 -->
+	<action name="config" class="com.xy.cms.action.system.SysConfigAction">
+		<result name="init">/admin/jsp/system/config/init.jsp</result>
+		<result name="list">/admin/jsp/system/config/list.jsp</result>
+		<result name="edit">/admin/jsp/system/config/edit.jsp</result>
+		<result name="add">/admin/jsp/system/config/add.jsp</result>
+	
+	</action>
+	
+	<!-- 菜单管理 -->
+	<action name="menu" class="com.xy.cms.action.system.MenuAction">
+	
+		<result name="init">/admin/jsp/system/menu/init.jsp</result>
+		<result name="tree">/admin/jsp/system/menu/tree.jsp</result>
+		<result name="list">/admin/jsp/system/menu/list.jsp</result>
+		<result name="add">/admin/jsp/system/menu/add.jsp</result>
+		<result name="edit">/admin/jsp/system/menu/edit.jsp</result>
+	</action>
+
+	<!-- 视图管理 -->
+	<action name="view" class="com.xy.cms.action.system.ViewAction">
+	    <result name="init">/admin/jsp/system/view/init.jsp</result>
+	    <result name="list">/admin/jsp/system/view/list.jsp</result>
+	    <result name="addView">/admin/jsp/system/view/addView.jsp</result>
+	    <result name="tableInfo">/admin/jsp/system/view/tableInfo.jsp</result>
+	    <result name="editView">/admin/jsp/system/view/editView.jsp</result>
+	    <result name="tableInfoRe">/admin/jsp/system/view/tableInfoRe.jsp</result>
+	</action>
+	
+	<!-- 主外键关系选择action -->
+	<action name="shipAction" class="com.xy.cms.action.system.ChooseRelationShipAction">
+		<result name="init">/admin/jsp/system/model/common/chooseRelationShip/init.jsp</result>
+		<result name="tree">/admin/jsp/system/model/common/chooseRelationShip/tree_init.jsp</result>
+		<result name="list">/admin/jsp/system/model/common/chooseRelationShip/list.jsp</result>
+	</action>
+	
+	<!-- 组织机构 -->
+	<action name="departmentAction" class="com.xy.cms.action.system.DepartmentAction">
+		<result name="init">/admin/jsp/system/department/init.jsp</result>
+		<result name="query">/admin/jsp/system/department/list.jsp</result>
+		<result name="editCompany">/admin/jsp/system/department/editCompany.jsp</result>
+		<result name="addDepartment">/admin/jsp/system/department/addDepartment.jsp</result>
+		<result name="editDepartment">/admin/jsp/system/department/editDepartment.jsp</result>
+		<result name="addEmployee">/admin/jsp/system/department/addEmpoyee.jsp</result>
+		<result name="editEmployee">/admin/jsp/system/department/editEmpoyee.jsp</result>
+		<result name="provinceCityInit">/admin/jsp/system/department/chooseRelationShip/init.jsp</result>
+		<result name="provinceCity">/admin/jsp/system/department/chooseRelationShip/list.jsp</result>
+		<result name="import">/admin/jsp/system/department/import.jsp</result>
+		<result name="tree">/admin/jsp/system/department/tree.jsp</result>
+	</action>
+	
+	<!-- 人员绩效 -->
+	<action name="performanceAction" class="com.xy.cms.action.system.PerformanceAction">
+		<result name="init">/admin/jsp/system/performance/init.jsp</result>
+		<result name="query">/admin/jsp/system/performance/list.jsp</result>
+		<result name="tree">/admin/jsp/system/performance/tree.jsp</result>
+		<result name="init_time">/admin/jsp/system/performance/time/init.jsp</result>
+		<result name="query_time">/admin/jsp/system/performance/time/list.jsp</result>
+		<result name="empTime">/admin/jsp/system/performance/time/emp.jsp</result>
+		<result name="allempTime">/admin/jsp/system/performance/time/allemp.jsp</result>
+		<result name="detail">/admin/jsp/system/performance/time/detail.jsp</result>
+	</action>
+	<!-- 人员绩效 完成 -->
+	<action name="taskAction" class="com.xy.cms.action.system.TaskAction">
+		<result name="init">/admin/jsp/system/performance/task/init.jsp</result>
+		<result name="query">/admin/jsp/system/performance/task/list.jsp</result>
+		<result name="dept">/admin/jsp/system/performance/task/dept.jsp</result>
+		<result name="emp">/admin/jsp/system/performance/task/emp.jsp</result>
+		<result name="emps">/admin/jsp/system/performance/task/emps.jsp</result>
+		<result name="empTaskHistogram">/admin/jsp/system/performance/task/histogram.jsp</result>
+	</action>
+	<!-- 人员绩效 合格-->
+	<action name="qualityAction" class="com.xy.cms.action.system.QualityAction">
+		<result name="init">/admin/jsp/system/performance/quality/init.jsp</result>
+		<result name="query">/admin/jsp/system/performance/quality/list.jsp</result>
+		<result name="dept">/admin/jsp/system/performance/quality/dept.jsp</result>
+		<result name="emp">/admin/jsp/system/performance/quality/emp.jsp</result>
+		<result name="emps">/admin/jsp/system/performance/quality/emps.jsp</result>
+		<result name="empTaskHistogram">/admin/jsp/system/performance/quality/histogram.jsp</result>
+	</action>
+	<!-- 移动终端角色权限 -->
+	<action name="appRolePower" class="com.xy.cms.action.system.AppRolePowerAction">
+		<result name="add">/admin/jsp/system/appRolePower/add.jsp</result>
+		<result name="init">/admin/jsp/system/appRolePower/init.jsp</result>
+		<result name="query">/admin/jsp/system/appRolePower/list.jsp</result>
+		<result name="edit">/admin/jsp/system/appRolePower/edit.jsp</result>
+		<result name="rolePower">/admin/jsp/system/appRolePower/rolePower.jsp</result>
+	</action>
+
+	<!-- 生产计划 -->
+	<action name="produceplanAction" class="com.xy.cms.action.system.ProduceplanAction">
+		<result name="init">/admin/jsp/system/produceplan/init.jsp</result>
+		<result name="query">/admin/jsp/system/produceplan/list.jsp</result>
+		<result name="queryProductInit">/admin/jsp/system/produceplan/queryProduct/init.jsp</result>
+		<result name="queryProduct">/admin/jsp/system/produceplan/queryProduct/list.jsp</result>
+		<result name="addNoOrder">/admin/jsp/system/produceplan/addNoOrder.jsp</result>
+		<result name="editNoOrder">/admin/jsp/system/produceplan/editNoOrder.jsp</result>
+		<result name="addYesOrderOne">/admin/jsp/system/produceplan/addYesOrderOne.jsp</result>
+		<result name="editYesOrderOne">/admin/jsp/system/produceplan/editYesOrderOne.jsp</result>
+		
+		
+		<result name="editNoOrderNum">/admin/jsp/system/produceplan/editNoOrderNum.jsp</result>
+		<result name="editYesOrderOneNum">/admin/jsp/system/produceplan/editYesOrderOneNum.jsp</result>
+	</action>
+	<!-- 产品质量追溯 -->
+	<action name="traceAction" class="com.xy.cms.action.system.TraceAction" >
+		<result name="init">/admin/jsp/system/track/init.jsp</result>
+		<result name="query">/admin/jsp/system/track/list.jsp</result>
+		<result name="plantodo">/admin/jsp/system/track/plantodo.jsp</result>
+		<result name="todoDetail">/admin/jsp/system/track/todoDetail.jsp</result>
+		<result name="relationGos">/admin/jsp/system/track/relation.jsp</result>
+		<result name="plan">/admin/jsp/system/track/plan.jsp</result>
+		<result name="order">/admin/jsp/system/track/order.jsp</result>
+		<result name="printDis">/admin/jsp/system/track/printDis.jsp</result>
+	</action>
+	<!-- 数据字典->行政区域 -->
+	<action name="area" class="com.xy.cms.action.system.AreaAction" >
+		<result name="init">/admin/jsp/system/region/init.jsp</result>
+		<result name="add">/admin/jsp/system/region/add.jsp</result>
+		<result name="tree">/admin/jsp/system/region/tree.jsp</result>
+		<result name="edit">/admin/jsp/system/region/edit.jsp</result>
+	</action>
+	<!-- 物料类型管理 -->
+	<action name="materielType" class="com.xy.cms.action.system.MaterielTypeAction" >
+		<result name="init">/admin/jsp/system/materieltype/init.jsp</result>
+		<result name="add">/admin/jsp/system/materieltype/add.jsp</result>
+		<result name="tree">/admin/jsp/system/materieltype/tree.jsp</result>
+		<result name="edit">/admin/jsp/system/materieltype/edit.jsp</result>
+		<result name="import">/admin/jsp/system/materieltype/import.jsp</result>
+	</action>
+	
+	<!-- 设备类型管理 -->
+	<action name="equipmentType" class="com.xy.cms.action.system.EquipmentTypeAction" >
+		<result name="init">/admin/jsp/system/equipmentType/init.jsp</result>
+		<result name="add">/admin/jsp/system/equipmentType/add.jsp</result>
+		<result name="tree">/admin/jsp/system/equipmentType/tree.jsp</result>
+		<result name="edit">/admin/jsp/system/equipmentType/edit.jsp</result>
+		<result name="import">/admin/jsp/system/equipmentType/import.jsp</result>
+	</action>
+	<!-- 账号管理 -->
+	<action name="accout_setting" class="com.xy.cms.action.system.AccountAction" >
+		<result name="init">/admin/jsp/system/account/init.jsp</result>
+		<result name="query">/admin/jsp/system/account/list.jsp</result>
+		<result name="add">/admin/jsp/system/account/add.jsp</result>
+		<result name="edit">/admin/jsp/system/account/edit.jsp</result>
+		<result name="empinit">/admin/jsp/system/account/emp/init.jsp</result>
+		<result name="list">/admin/jsp/system/account/emp/list.jsp</result>
+	</action> 
+	
+	<action name="test" class="com.xy.cms.action.system.TestAction">
+		<result name="init">/admin/jsp/system/test/init.jsp</result>
+		<result name="list">/admin/jsp/system/test/list.jsp</result>
+		<result name="edit">/admin/jsp/system/test/edit.jsp</result>
+		<result name="add">/admin/jsp/system/test/add.jsp</result>
+	</action>	
+</package>
+</struts>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.TodoClaimMaterial" table="todo_claim_material">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+         <property name="claimId" type="java.lang.Long">
+            <column name="claim_id">
+            	 <comment>报工id</comment>
+            </column>
+        </property>
+        <property name="materialId" type="java.lang.Long">
+            <column name="material_id">
+            	 <comment>物料id</comment>
+            </column>
+        </property>
+        <property name="materialCode" type="java.lang.String">
+            <column name="material_code">
+            	 <comment>物料编号</comment>
+            </column>
+        </property>
+        <property name="materialName" type="java.lang.String">
+            <column name="material_name">
+            	 <comment>物料名称</comment>
+            </column>
+        </property>
+        <property name="materialModel" type="java.lang.String">
+            <column name="material_model">
+            	 <comment>物料类型</comment>
+            </column>
+        </property>
+        <property name="number" type="java.lang.Long">
+            <column name="number">
+            	 <comment>物料数量</comment>
+            </column>
+        </property>
+        <property name="batchNumber" type="java.lang.String">
+            <column name="batch_number">
+            	 <comment>物料类型</comment>
+            </column>
+        </property>
+         <property name="addDate" type="java.util.Date">
+            <column name="add_date">
+            	 <comment>添加时间</comment>
+            </column>
+        </property>
+         <property name="createby" type="java.lang.Long">
+            <column name="createby">
+            	 <comment>创建人</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

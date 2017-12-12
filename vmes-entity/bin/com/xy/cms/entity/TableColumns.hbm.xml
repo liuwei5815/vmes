@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.TableColumns" table="sys_table_columns" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="tableId" type="java.lang.Long">
+            <column name="table_id" >
+                <comment>表id</comment>
+            </column>
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="name">
+                <comment>字段名</comment>
+            </column>
+        </property>
+        <property name="nameCn" type="java.lang.String">
+            <column name="name_cn">
+                <comment>字段名中文</comment>
+            </column>
+        </property>
+        <property name="dataType" type="java.lang.Long">
+            <column name="dataType">
+                <comment>字段类型(字符、整型数字，时间，文本域、大文本、枚举)</comment>
+            </column>
+        </property>
+        <property name="len" type="java.lang.String">
+            <column name="len">
+                <comment>字段长度</comment>
+            </column>
+        </property>
+        <property name="defaults" type="java.lang.String">
+            <column name="defaults">
+                <comment>默认值</comment>
+            </column>
+        </property>
+        <property name="optvalue" type="java.lang.String">
+            <column name="optvalue">
+                <comment>可选值</comment>
+            </column>
+        </property>
+         <property name="notnull" type="java.lang.Short">
+            <column name="notnull">
+                <comment>是否允许为空</comment>
+            </column>
+        </property>
+         <property name="showinform" type="java.lang.Short">
+            <column name="showinform">
+                <comment>是否在表单中显示</comment>
+            </column>
+        </property>
+        <property name="showinlist" type="java.lang.Short">
+            <column name="showinlist">
+                <comment>是否在查询列表中显示</comment>
+            </column>
+        </property>
+         <property name="des" type="java.lang.String">
+            <column name="des">
+                <comment>说明</comment>
+            </column>
+        </property>
+         <property name="orderby" type="java.lang.Long">
+            <column name="orderby">
+                <comment>排序</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Short">
+            <column name="status">
+                <comment>使用状态</comment>
+            </column>
+        </property>
+        <property name="addDate" type="java.util.Date">
+            <column name="add_date">
+                <comment>创建时间</comment>
+            </column>
+        </property>
+		<property name="updateDate" type="java.util.Date">
+            <column name="update_date">
+                <comment>修改时间</comment>
+            </column>
+        </property>
+        <property name="primaryKey" type="java.lang.Short">
+            <column name="primaryKey">
+                <comment>是否主键 0:不是 1:是</comment>
+            </column>
+        </property>
+        <property name="increment" type="java.lang.Short">
+            <column name="increment">
+                <comment>是否主键 0:不是 1:是</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

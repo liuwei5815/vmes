@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.i18n.encoding"     value="UTF-8" />
+    <constant name="struts.devMode"           value="false" />
+	<constant name="struts.objectFactory"     value="spring" />
+	<constant name="struts.multipart.saveDir" value="/tmp" />
+	<constant name= "struts.multipart.maxSize" value="1048576010" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+   	<package name="main" extends="struts-default">
+		<interceptors>
+			<interceptor name ="auth" class ="com.xy.cms.common.AdminAuthorizationInterceptor" >
+			<param name="excludeUrls">
+				login!doLogin,login!doLogOut,login!toLogin,index
+			</param>
+			</interceptor>
+			<interceptor-stack name="adminInterceptorStack"> 
+				<interceptor-ref name="auth"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref> 
+		     </interceptor-stack>
+		</interceptors>
+		<global-results>
+				<result name="exception">/admin/jsp/exception.jsp</result>
+				<result name="not_permit">/admin/jsp/not_permit.jsp</result>
+				<result name="login">/login.jsp</result>
+				<result name="invalid.token">/pages/invalidtoken.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="com.xy.cms.common.exception.NotEnoughRightsException" result="not_permit" />
+			<exception-mapping exception="java.lang.Exception" result="exception" />
+		</global-exception-mappings>
+   		
+		<action name="index" class="com.xy.cms.action.IndexAction">
+			<result type="redirect">/admin/login!toLogin.action</result>
+		</action>
+   	
+   	</package>
+   	
+     <include file="config/struts_admin.xml"/>
+</struts>

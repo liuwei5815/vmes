@@ -1,0 +1,63 @@
+/**
+*	自定义右键菜单样式，当鼠标经过树上节点时
+*	在右键会出现一个下拉箭头，点击弹出菜单
+*	overmenu是在原contextmenu基础上修改而来的
+**/
+.jstree-contextmenu-hover {
+	background-image: url(./xiala.png);
+	background-size: 14px;
+	display: none;
+	cursor: pointer;
+	height: 14px;
+	position: absolute;
+	right: 15px;
+	top: 6px;
+	width: 14px;
+}
+
+.vakata-context, .vakata-context ul {
+	background: #f5f5f5;
+	border: 1px solid #979797;
+	box-shadow: 2px 2px 2px #fff;
+}
+
+.vakata-context li>a .vakata-contextmenu-sep {
+	border-left: none;
+	width: 0px;
+}
+
+.vakata-context .vakata-context-separator>a, .vakata-context .vakata-context-separator>a:hover
+	{
+	background: #fff;
+	border: 0;
+	border-top: none;
+	height: 1px;
+	border-left: none;
+	text-shadow: 0 0 0 transparent;
+	box-shadow: 0 0 0 transparent;
+	border-radius: 0;
+}
+
+.vakata-context, .vakata-context ul {
+	border: 1px solid #979797;
+	background: #fff;
+	border: medium none;
+	border-radius: 3px;
+	box-shadow: 0 0 3px rgba(86, 96, 117, 0.7);
+}
+
+.vakata-context li>a:hover {
+	background-color: #f5f5f5;
+	box-shadow: none;
+	color: #262626;
+}
+
+.vakata-context .vakata-context-hover>a {
+	background-color: #f5f5f5;
+	box-shadow: none;
+	color: #262626;
+}
+
+.vakata-context li>a {
+	color: #676a6c;
+}

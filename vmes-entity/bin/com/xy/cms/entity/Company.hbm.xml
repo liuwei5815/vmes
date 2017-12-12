@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.Company" table="sys_company" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="Name" length="100">
+                <comment>公司名称</comment>
+            </column>
+        </property>
+        <property name="logo" type="java.lang.String">
+            <column name="Logo" length="100">
+                <comment>公司Logo</comment>
+            </column>
+        </property>
+         <property name="area" type="java.lang.Long">
+            <column name="area" >
+                <comment>所在区域</comment>
+            </column>
+        </property>
+       <!--  <property name="province" type="java.lang.Long">
+            <column name="province" >
+                <comment>所在省</comment>
+            </column>
+        </property>
+         <property name="city" type="java.lang.Long">
+            <column name="City" >
+                <comment>所在市</comment>
+            </column>
+        </property> -->
+         <property name="address" type="java.lang.String">
+            <column name="address" length="100">
+                <comment>地址</comment>
+            </column>
+        </property>
+         <property name="contact" type="java.lang.String">
+            <column name="contact" length="30">
+                <comment>联系人</comment>
+            </column>
+        </property>
+        <property name="tel" type="java.lang.String">
+            <column name="Tel" length="20">
+                <comment>电话</comment>
+            </column>
+        </property>
+         <property name="addDate" type="java.util.Date">
+            <column name="Add_date">
+                <comment>创建时间</comment>
+            </column>
+        </property>
+		<property name="updateDate" type="java.util.Date">
+            <column name="Update_date">
+                <comment>修改时间</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

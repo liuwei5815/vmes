@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.AppRolePower" table="app_role_power" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="appRoleId" type="java.lang.Long">
+			<column name="app_role_id">
+				
+			</column>
+		</property>
+		<property name="appModularId" type="java.lang.Long">
+			<column name="app_modular_id">
+			
+			</column>
+		</property>
+
+
+
+	</class>
+</hibernate-mapping>

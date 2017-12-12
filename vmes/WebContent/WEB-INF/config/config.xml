@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<turboshop> 
+  <action> 
+    <!-- 数据库连接池配置 -->  
+    <tag name="jdbc_internal_pool" value="true"/>  
+    <tag name="pool_max_active" value="30"/>  
+    <tag name="pool_max_idle" value="10"/>  
+    <tag name="pool_min_idle" value="3"/>  
+    <tag name="pool_max_wait" value="10000"/>  
+    <tag name="jdbc_driver" value="oracle.jdbc.driver.OracleDriver"/>  
+    <tag name="jdbc_url" value="jdbc:oracle:thin:@localhost:1521:orcl"/>  
+    <tag name="jdbc_username" value="splt"/>  
+    <tag name="jdbc_password" value="splt"/>  
+    <tag name="data_source" value="jdbc/splt"/>  
+    <tag name="org_sequence" value="10000"/>  
+    <tag name="sequence_table" value="sequence"/>  
+    <!-- 系统配置 -->  
+    <tag name="permitFileSize" value="1024000"/>  
+    <tag name="permitUpFile" value="gif,jpg,jpeg,swf"/>  
+    <tag name="upload_pro_img" value="/upl_img/"/>  
+    <tag name="upload_img_tmp" value="/upl_img_tmp/"/>  
+    <tag name="product_index" value="WEB-INF/product_index"/>  
+    <tag name="upload_news_img" value="/file_upload/"/>  
+    <tag name="htmlcache" value="true"/>  
+    <tag name="htmlcache_size" value="2000"/>  
+    <!-- 发送邮件模版设置 -->  
+    <tag name="email_template" value="WEB-INF/email_template"/>  
+    <!-- 验证码设置 -->  
+    <tag name="licence_content_type_type" value="image/jpeg"/>  
+    <tag name="licence_x" value="5"/>  
+    <tag name="licence_y" value="18"/>  
+    <tag name="licence_width" value="53"/>  
+    <tag name="licence_height" value="23"/>  
+    <tag name="licence_fontSize" value="20"/>  
+    <tag name="licence_fontColor" value="000000"/>  
+  </action> 
+</turboshop>

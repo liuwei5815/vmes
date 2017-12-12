@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd"
+	default-autowire="byName" default-lazy-init="false">
+	<bean id="whereUtil" class="com.xy.cms.db.WhereUtilImpl"></bean>
+	<bean id="dbUtil" class="com.xy.cms.db.MySqlDbUtilImpl"></bean>
+	<bean id="dao" class="com.xy.cms.common.base.BaseDAO" />
+	<bean id="cacheService" class="com.xy.cms.service.imp.CacheServiceImpl" />
+	
+
+	<bean id="commonFilter" class="com.xy.cms.filter.CommonFilter" />
+	<bean id="webPageItemsService" class="com.xy.cms.service.imp.WebPageItemsServiceImpl" />
+	
+	
+	<bean id="loginService" class="com.xy.cms.service.imp.LoginServiceImpl" />
+	<bean id="columnTypeService" class="com.xy.cms.service.imp.TableColumnTypeServiceImpl" />
+	<bean id="tablesService" class="com.xy.cms.service.imp.TablesServiceImpl" />
+	<bean id="adminService" class="com.xy.cms.service.imp.AdminServiceImpl" />
+	<bean id="roleService" class="com.xy.cms.service.imp.RoleServiceImpl" />
+	<bean id="powerService" class="com.xy.cms.service.imp.PowerServiceImpl" />
+	<bean id="licenseService" class="com.xy.cms.service.imp.LicenseServiceImpl"></bean>
+	<bean id="modelService" class="com.xy.cms.service.imp.ModelServiceImpl" />
+	<bean id="viewService" class="com.xy.cms.service.imp.ViewServiceImpl" />
+	<bean id="equipmentService" class="com.xy.cms.service.imp.EquipmentServiceImpl" />
+	<bean id="materialService" class="com.xy.cms.service.imp.MaterialServiceImpl" />
+	<bean id="indexService" class="com.xy.cms.service.imp.IndexServiceImpl" />
+	<bean id="tourismService" class="com.xy.cms.service.imp.PlaytourismServiceImpl" />
+	<bean id="sysLogService" class="com.xy.cms.service.imp.SysLogServiceImpl" />
+	<bean id="menuService" class="com.xy.cms.service.imp.MenuServiceImpl" />
+	<bean id="planTodoService" class="com.xy.cms.service.imp.PlanTodoServiceImpl" />
+	<bean id="peopleService" class="com.xy.cms.service.imp.PeopleServiceImpl" />
+	<bean id="tableColumnsService" class="com.xy.cms.service.imp.TableColumnsServiceImpl" />
+	<bean id="tableRelationshipService" class="com.xy.cms.service.imp.TableRelationshipServiceImpl" />
+	<bean id="configService" class="com.xy.cms.service.imp.ConfigServiceImpl" />
+	<bean id="sequenceService" class="com.xy.cms.service.imp.SequenceServiceImpl" />
+	<bean id="departmentService" class="com.xy.cms.service.imp.DepartmentServiceImpl" />
+	<bean id="companyService" class="com.xy.cms.service.imp.CompanyServiceImpl" />
+	<bean id="employeeService" class="com.xy.cms.service.imp.EmployeeServiceImpl" />
+	<bean id="appRoleService" class="com.xy.cms.service.imp.AppRoleServiceImpl" />
+	<bean id="appUserService" class="com.xy.cms.service.imp.AppUserServiceImpl" />
+	<bean id="employeeDeptartService" class="com.xy.cms.service.imp.EmployeeDeptartServiceImpl" />
+
+	<bean id="menuActionService" class="com.xy.cms.service.imp.MenuActionServiceImpl" />
+	<bean id="appRolePowerService" class="com.xy.cms.service.imp.AppRolePowerServiceImpl" />
+
+	<bean id="produceplanService" class="com.xy.cms.service.imp.ProduceplanServiceImpl" />
+	<bean id="ordersService" class="com.xy.cms.service.imp.OrdersServiceImpl" />
+	<bean id="productService" class="com.xy.cms.service.imp.ProductServiceImpl" />
+	<bean id="customerService" class="com.xy.cms.service.imp.CustomerServiceImpl" />
+	<bean id="ordersDetailService" class="com.xy.cms.service.imp.OrdersDetailServiceImpl" />
+
+	<bean id="produceplanTodoClaimService" class="com.xy.cms.service.imp.ProduceplanTodoClaimServiceImpl"></bean>
+
+	<bean id="produceplanExceptionHandleService" class="com.xy.cms.service.imp.ProduceplanExceptionHandleServiceImpl" />
+	
+	<bean id="performanceService" class="com.xy.cms.service.imp.PerformanceServiceImpl" />
+	<bean id="taskService" class="com.xy.cms.service.imp.TaskServiceImpl" />
+	<bean id="traceService" class="com.xy.cms.service.imp.TraceServiceImpl" />
+	<bean id="qualityService" class="com.xy.cms.service.imp.QualityServiceImpl" />
+	<bean id="areaService" class="com.xy.cms.service.imp.AreaServiceImpl" />
+	<bean id="materielTypeService" class="com.xy.cms.service.imp.MaterielTypeServiceImpl" />
+	<bean id="equipmentTypeService" class="com.xy.cms.service.imp.EquipmentTypeServiceImpl" />
+	<bean id="accountService" class="com.xy.cms.service.imp.AccountServiceImpl" />
+	
+	
+	<bean id="freemarkerConfig" class="com.xy.cms.common.export.FreemarkerConfig">
+			<property name="templateLoaderPath" value="/template">
+			
+			</property>
+	
+	</bean>
+	<bean id="testService" class="com.xy.cms.service.imp.TestServiceImpl" />
+	
+</beans>

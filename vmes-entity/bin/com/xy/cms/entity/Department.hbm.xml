@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.Department" table="sys_department" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+         <property name="pid" type="java.lang.Long">
+            <column name="pid" >
+                <comment>父级部门id</comment>
+            </column>
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="name" length="50">
+                <comment>部门名称</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Short">
+            <column name="status">
+                <comment>状态，1：正常，0：停用</comment>
+            </column>
+        </property>
+        <property name="createby" type="java.lang.Long">
+            <column name="createby" >
+                <comment>创建人</comment>
+            </column>
+        </property>
+         <property name="addDate" type="java.util.Date">
+            <column name="add_date">
+                <comment>创建时间</comment>
+            </column>
+        </property>
+		<property name="updateDate" type="java.util.Date">
+            <column name="update_date">
+                <comment>修改时间</comment>
+            </column>
+        </property>
+		<property name="orderby" type="java.lang.Integer">
+            <column name="orderby">
+                <comment>排序</comment>
+            </column>
+        </property>
+        <property name="level" type="java.lang.Integer">
+            <column name="level">
+                <comment>部门级别</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

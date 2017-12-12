@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.View" table="sys_view" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        
+        <property name="tableId" type="java.lang.Long">
+             <column name="table_id">
+                <comment>表Id</comment>
+            </column>
+        </property>
+        
+        <property name="searchRole" type="java.lang.String">
+             <column name="search_role">
+                <comment>特殊查询规则 例如：(条件1 and(条件2 or 条件3))</comment>
+            </column>
+        </property>
+        
+        <property name="name" type="java.lang.String">
+            <column name="name">
+                <comment>视图名称</comment>
+            </column>
+        </property>
+        <property name="access" type="java.lang.String">
+            <column name="access">
+                <comment>访问权限</comment>
+            </column>
+        </property>
+        <property name="state" type="java.lang.Short">
+            <column name="state">
+                <comment>使用状态 1：正常 0：停用</comment>
+            </column>
+        </property>
+        
+        <property name="createTime" type="java.util.Date">
+             <column name="create_time">
+                <comment>创建时间</comment>
+            </column>
+        </property>
+        
+        <property name="targetTabId" type="java.lang.String">
+             <column name="target_table_id">
+                <comment>外键表id</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

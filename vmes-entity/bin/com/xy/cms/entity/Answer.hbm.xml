@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.Answer" table="cl_answer">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="quesId" type="java.lang.Long">
+            <column name="ques_id ">
+                <comment>问题ID</comment>
+            </column>
+        </property>
+        <property name="replyContent" type="java.lang.String">
+            <column name="reply_content" length="2000">
+                <comment>回答内容</comment>
+            </column>
+        </property>
+        <property name="replyPerson" type="java.lang.String">
+            <column name="reply_person" length="100">
+                <comment>回答者</comment>
+            </column>
+        </property>
+        <property name="replyTime" type="java.util.Date">
+            <column name="reply_time">
+                <comment>回答时间</comment>
+            </column>
+        </property>
+        
+	</class>
+</hibernate-mapping>

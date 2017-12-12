@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.MenuAction" table="sys_menu_action">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name">
+                <comment>动作名称</comment>
+            </column>	
+        </property>
+        <property name="menuId" type="java.lang.Long">
+            <column name="menu_id">
+                <comment>动作名称</comment>
+            </column>	
+        </property>
+         <property name="type" type="java.lang.Integer">
+            <column name="type">
+                <comment>动作名称</comment>
+            </column>	
+        </property>
+        
+        <property name="url" type="java.lang.String">
+            <column name="url">
+                <comment>菜单等级</comment>
+            </column>
+        </property>
+        <property name="width" type="java.lang.Integer">
+            <column name="width">
+                <comment>上级菜单id</comment>
+            </column>
+        </property>
+        <property name="height" type="java.lang.Integer">
+            <column name="height">
+                <comment>菜单url</comment>
+            </column>
+        </property>
+         <property name="icon" type="java.lang.String">
+            <column name="icon">
+                <comment></comment>
+            </column>
+        </property>
+
+  
+	</class>
+</hibernate-mapping>

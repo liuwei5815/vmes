@@ -1,0 +1,17 @@
+@import "framework/reset.css";@import "framework/basic.css";@import "framework/position.css";@import "framework/form.css";@import "framework/icon.css";@import "framework/code.css";
+
+
+
+.clearfix{ clear:both;}
+.step_password{ background-color:#f1f1f1; width:100%; margin-bottom:10px; border:#cacaca 1px solid;}
+.step_password ul li{ list-style:none; float:left; width:20%; text-align:center; position:relative;}
+/* .step_password ul li{ list-style:none; float:left; width:25%; text-align:center; position:relative;} */
+.step_password ul{ list-style:none;}
+.step_password .step_cont{ width:90%; margin:0 auto; padding:6px 0 16px 0;}
+.step_password .step_cont .yuan{ width:30px; height:30px; position:absolute; z-index:2; top:0px; left:50%; margin-left:-23px; border-radius:50%; border:8px solid #f1f1f1; background-color:#d1d1d1; text-align:center; line-height:30px; color:#fff;}
+.step_password .step_cont .curent_yuan{ display:inline-block; background-color:#dadada;}
+.step_password .number_box{ width:46px; height:46px; margin:0 auto;}
+.step_password .step_cont li i{ position:absolute; z-index:1; width:100%;  height:2px; background-color: #e5e5e5; top:22px; left:0px;}
+.step_password .step_cont .active_i{ background-color:#3366cc;}
+.step_password .step_cont p{ margin:0px; margin-top:-4px; font-size: 14px; font-weight: 700; line-height: 20px; color: #a5a5a5;}
+.step_password .step_cont .p_color{color:#3f3f3f;}

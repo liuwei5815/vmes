@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.TableRelationship" table="sys_table_relationship" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name">
+                <comment>名称</comment>
+            </column>
+        </property>
+        <property name="sourceTableId" type="java.lang.Long">
+            <column name="source_table_id">
+                <comment>source表id</comment>
+            </column>
+        </property>
+        <property name="sourceColumnId" type="java.lang.Long">
+            <column name="source_column_id">
+                <comment>source表中外键字段id</comment>
+            </column>
+        </property>
+        <property name="targetTableId" type="java.lang.Long">
+            <column name="target_table_id">
+                <comment>target表id</comment>
+            </column>
+        </property>
+        <property name="targetColumnId" type="java.lang.Long">
+            <column name="target_column_id">
+                <comment>target表中外键字段id</comment>
+            </column>
+        </property>
+        <property name="targetShowColumnId" type="java.lang.Long">
+            <column name="target_show_id">
+                <comment>target表中外键显示字段id</comment>
+            </column>
+        </property>
+        <property name="addDate" type="java.util.Date">
+            <column name="add_date">
+                <comment>创建时间</comment>
+            </column>
+        </property>
+		<property name="updateDate" type="java.util.Date">
+            <column name="update_date">
+                <comment>修改时间</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.Short">
+            <column name="type">
+                <comment>主外键关系：1:1对1 2:1对多 3:多对多</comment>
+            </column>
+        </property>
+        <property name="fs" type="java.lang.Short">
+            <column name="fs">
+                <comment>主表添加方式 1:在从表中选择主表 2:在主表中添加从表</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

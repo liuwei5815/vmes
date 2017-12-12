@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlrewrite>
+    <!-- 首页  -->
+	<rule>
+		<from>^/index.html$</from>
+		<to>index!doIndex.action</to>
+	</rule>
+	
+</urlrewrite>
+

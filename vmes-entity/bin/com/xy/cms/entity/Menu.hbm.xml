@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.Menu" table="sys_menu" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name" length="100">
+                <comment>菜单名称</comment>
+            </column>
+        </property>
+        <property name="level" type="java.lang.Short">
+            <column name="level">
+                <comment>菜单等级</comment>
+            </column>
+        </property>
+        <property name="supiorId" type="java.lang.Long">
+            <column name="supior_id">
+                <comment>上级菜单id</comment>
+            </column>
+        </property>
+        <property name="url" type="java.lang.String">
+            <column name="url">
+                <comment>菜单url</comment>
+            </column>
+        </property>
+		<property name="orderby" type="java.lang.Integer">
+            <column name="orderby">
+                <comment>排序</comment>
+            </column>
+        </property>
+        <property name="icon" type="java.lang.String">
+            <column name="icon">
+                <comment>图标样式</comment>
+            </column>
+        </property>
+        <property name="state" type="java.lang.Short">
+            <column name="state">
+                <comment>状态，1：正常，0：停用</comment>
+            </column>
+        </property>
+        <property name="isMenu" type="java.lang.String">
+            <column name="is_menu">
+                <comment>0:是菜单 1:不是，操作按扭</comment>
+            </column>
+        </property>
+        
+        <property name="isSuperMenu" type="java.lang.Boolean">
+            <column name="is_supermenu">
+                <comment>0:是菜单 1:不是，操作按扭</comment>
+            </column>
+        </property>
+        
+	</class>
+</hibernate-mapping>
