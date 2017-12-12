@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.Employee" table="sys_employee"
+		dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="name" length="30">
+				<comment>员工名称</comment>
+			</column>
+		</property>
+		<property name="birthday" type="java.lang.String">
+			<column name="birthday" length="20">
+				<comment>出生年月</comment>
+			</column>
+		</property>
+		<property name="gender" type="java.lang.Short">
+			<column name="gender">
+				<comment>1：男，2：女</comment>
+			</column>
+		</property>
+		<property name="phoneNum" type="java.lang.String">
+			<column name="phoneNum" length="30">
+				<comment>手机号码</comment>
+			</column>
+		</property>
+		<property name="jobtitle" type="java.lang.String">
+			<column name="jobtitle" length="30">
+				<comment>职位</comment>
+			</column>
+		</property>
+		<property name="createby" type="java.lang.Long">
+			<column name="Createby">
+				<comment>创建人</comment>
+			</column>
+		</property>
+		<property name="serialNo" type="java.lang.String">
+			<column name="serial_no" length="30">
+				<comment>员工号</comment>
+			</column>
+		</property>
+		<property name="addDate" type="java.util.Date">
+			<column name="add_date">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="updateDate" type="java.util.Date">
+			<column name="Update_date">
+				<comment>修改时间</comment>
+			</column>
+		</property>
+		<property name="avatar" type="java.lang.String">
+			<column name="avatar" length="100">
+				<comment>头像</comment>
+			</column>
+		</property>
+		<property name="idcard" type="java.lang.String">
+			<column name="idcard" length="20">
+				<comment>身份证</comment>
+			</column>
+		</property>
+		<property name="rid" type="java.lang.Long">
+			<column name="rid">
+				<comment>角色id</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.OrdersDetail" table="orders_detail" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="orderId" type="java.lang.Long">
+            <column name="order_id" length="40">
+                <comment>订单号</comment>
+            </column>
+        </property>
+        <property name="productId" type="java.lang.Long">
+            <column name="pro_id">
+                <comment>产品</comment>
+            </column>
+        </property>
+        <property name="num" type="java.lang.Long">
+            <column name="num">
+                <comment>订购数量</comment>
+            </column>
+        </property>
+        <property name="finishTime" type="java.sql.Timestamp">
+            <column name="finish_time">
+                <comment>创建时间</comment>
+            </column>
+        </property>
+        <property name="deliveryDate" type="java.util.Date">
+            <column name="deliveryd_date">
+                <comment>交付时间</comment>
+            </column>
+        </property>
+		<property name="state" type="java.lang.Integer">
+            <column name="state">
+                <comment>状态，0进行中 1已完成 -1已取消</comment>
+            </column>
+        </property>
+        <property name="remarks" type="java.lang.String">
+            <column name="remarks">
+                <comment>备注</comment>
+            </column>
+        </property>
+         <property name="addDate" type="java.util.Date">
+            <column name="add_date">
+                <comment>添加时间</comment>
+            </column>
+        </property>
+        <property name="productCode" type="java.lang.String">
+            <column name="product_code" length="40">
+                <comment>自动编号</comment>
+            </column>
+        </property>
+        <property name="productName" type="java.lang.String">
+            <column name="product_name" length="80">
+                <comment>产品名称</comment>
+            </column>
+        </property>
+        <property name="productTypespec" type="java.lang.String">
+            <column name="product_typespec" length="20">
+                <comment>类型</comment>
+            </column>
+        </property>
+        <property name="productUnit" type="java.lang.String">
+            <column name="product_unit" length="20">
+                <comment>单位</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

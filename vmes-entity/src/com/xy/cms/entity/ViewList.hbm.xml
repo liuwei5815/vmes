@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.ViewList" table="sys_view_list" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="viewId" type="java.lang.Long">
+            <column name="view_id">
+                <comment>视图id</comment>
+            </column>
+        </property>
+         <property name="columnId" type="java.lang.Long">
+            <column name="columns_id">
+                <comment>字段id</comment>
+            </column>
+        </property>
+        <property name="showname" type="java.lang.String">
+            <column name="showname">
+                <comment>该字段在列表上显示的名称</comment>
+            </column>
+        </property>
+        <property name="width" type="java.lang.String">
+            <column name="width">
+                <comment>显示列宽度</comment>
+            </column>
+        </property>
+        
+        <property name="tableId" type="java.lang.Long">
+            <column name="table_id">
+                <comment>主键表id</comment>
+            </column>
+        </property>
+        <property name="targetTabId" type="java.lang.Long">
+            <column name="target_table_id">
+                <comment>外键表id</comment>
+            </column>
+        </property>
+        <property name="targetColId" type="java.lang.Long">
+            <column name="target_column_id">
+                <comment>外键表字段id</comment>
+            </column>
+        </property>
+        
+	</class>
+</hibernate-mapping>

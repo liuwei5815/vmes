@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.ProduceplanTodoClaim" table="produceplan_todo_claim"
+		dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<property name="todoId" type="java.lang.Long">
+			<column name="todo_id">
+				<comment>生产工序id</comment>
+			</column>
+		</property>
+		<property name="executor" type="java.lang.Long">
+			<column name="executor">
+				<comment>计划生产数量</comment>
+			</column>
+		</property>
+
+		<property name="disqualifiedNum" type="java.lang.Long">
+			<column name="disqualified_num">
+				<comment>实际生产数量</comment>
+			</column>
+		</property>
+		<property name="qualifiedNum" type="java.lang.Long">
+			<column name="qualified_num">
+				<comment>实际不合格数量</comment>
+			</column>
+		</property>
+		<property name="addDate" type="java.util.Date">
+			<column name="add_date">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="state" type="java.lang.Integer">
+			<column name="state">
+				<comment>状态，0：删除，1：正常,-1取消</comment>
+			</column>
+		</property>
+		<property name="plannum" type="java.lang.Long">
+			<column name="plannum">
+				<comment>生产计划编号</comment>
+			</column>
+		</property>
+		<property name="finishTime" type="java.util.Date">
+			<column name="finish_time" />
+		</property>
+		<property name="cancelTime" type="java.util.Date">
+			<column name="cancel_time" />
+		</property>
+	</class>
+</hibernate-mapping>

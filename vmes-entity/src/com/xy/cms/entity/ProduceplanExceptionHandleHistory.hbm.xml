@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.ProduceplanExceptionHandleHistory" table="produceplan_exception_handle_history">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+          <property name="produceplanId" type="java.lang.Long">
+            <column name="produceplan_id">
+            	 <comment>生产计划id</comment>
+            </column>
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="state" >
+                <comment>状态 1:生产计划预警（触发条件，销售订单详情调整数量后） 2：派工单预警（生产计划调整完成后） 3：完结（此流程终结，销售订单）    </comment>
+            </column>
+        </property>
+        
+         <property name="oldOrderNum" type="java.lang.Long">
+            <column name="old_order_num">
+            	 <comment>修改前的订单数量</comment>
+            </column>
+        </property>
+         <property name="orderNum" type="java.lang.Long">
+            <column name="order_num">
+            	 <comment>修改后的订单数量</comment>
+            </column>
+        </property>
+         <property name="oldPlanNum" type="java.lang.Long">
+            <column name="old_plan_num">
+            	 <comment>修改前的计划数量 </comment>
+            </column>
+        </property>
+         <property name="planNum" type="java.lang.Long">
+            <column name="plan_num">
+            	 <comment>修改后的计划数量</comment>
+            </column>
+        </property>
+       
+	</class>
+</hibernate-mapping>

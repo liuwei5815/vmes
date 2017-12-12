@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.Orders" table="orders" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="orderCode" type="java.lang.String">
+            <column name="order_code" length="40">
+                <comment>订单号</comment>
+            </column>
+        </property>
+        <property name="orderCodeAuto" type="java.lang.String">
+            <column name="order_code_auto" length="40">
+                <comment>自动订单号</comment>
+            </column>
+        </property>
+        <property name="addDate" type="java.sql.Timestamp">
+            <column name="add_date">
+                <comment>创建时间</comment>
+            </column>
+        </property>
+        <property name="orderDate" type="java.sql.Timestamp">
+            <column name="order_date">
+                <comment>下单时间</comment>
+            </column>
+        </property>
+		<property name="updateDate" type="java.sql.Timestamp">
+            <column name="update_Date">
+                <comment>修改时间</comment>
+            </column>
+        </property>
+        <property name="customerId" type="java.lang.Long">
+            <column name="customer_id">
+                <comment>客户ID</comment>
+            </column>
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="state">
+            </column>
+        </property>
+        <property name="deliveryDate" type="java.sql.Date">
+            <column name="delivery_date">
+                <comment>交付时间</comment>
+            </column>
+        </property>
+        <property name="finishTime" type="java.sql.Date">
+            <column name="finish_time">
+                <comment>完成时间</comment>
+            </column>
+        </property>
+        <property name="empId" type="java.lang.Long">
+            <column name="emp_id">
+                <comment>公司经手人</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

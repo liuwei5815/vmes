@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.Material" table="material" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="materialCode" type="java.lang.String">
+            <column name="material_code" length="30">
+                <comment>物料编号</comment>
+            </column>
+        </property>
+        <property name="usermaterialCode" type="java.lang.String">
+            <column name="usermaterial_code" length="30">
+                <comment>用户物料编号</comment>
+            </column>
+        </property>
+        <property name="materialName" type="java.lang.String">
+            <column name="material_name" length="100">
+                <comment>物料名称</comment>
+            </column>
+        </property>
+         <property name="materialSpec" type="java.lang.String">
+            <column name="material_spec" length="100">
+                <comment>物料规格</comment>
+            </column>
+        </property>
+         <property name="materialType" type="java.lang.String">
+            <column name="type" length="40">
+                <comment>物料型号</comment>
+            </column>
+        </property>
+         <property name="materialUnit" type="java.lang.String">
+            <column name="unit" length="12">
+                <comment>计量单位</comment>
+            </column>
+        </property>
+        <property name="materialqrCode" type="java.lang.String">
+            <column name="qrcode">
+                <comment>物料二维码</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

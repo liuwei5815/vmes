@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.Eqiupment" table="equipment" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="equipmentCode" type="java.lang.String">
+            <column name="equipment_code" length="30">
+                <comment>系统设备编号</comment>
+            </column>
+        </property>
+        <property name="userEquipmentCode" type="java.lang.String">
+            <column name="usereq_code" length="30">
+                <comment>用户设备编号</comment>
+            </column>
+        </property>
+        <property name="equipmentName" type="java.lang.String">
+            <column name="name" length="100">
+                <comment>设备名称</comment>
+            </column>
+        </property>
+         <property name="equipmentModel" type="java.lang.String">
+            <column name="model" length="100">
+                <comment>设备规格</comment>
+            </column>
+        </property>
+         <property name="equipmentType" type="java.lang.Integer">
+            <column name="equip_type" length="12">
+                <comment>设备型号</comment>
+            </column>
+        </property>
+        <property name="buyDate" type="java.util.Date">
+            <column name="buy_date">
+                <comment>采购日期</comment>
+            </column>
+        </property>
+        <property name="equipmentImg" type="java.lang.String">
+            <column name="image">
+                <comment>设备图片</comment>
+            </column>
+        </property>
+        <property name="equipmentWorkTime" type="java.lang.String">
+            <column name="worktime">
+                <comment>设备工作时间</comment>
+            </column>
+        </property>
+         <property name="dept" type="java.lang.Long">
+            <column name="dept_id" length="12">
+                <comment>设备所属部门</comment>
+            </column>
+        </property>
+        <property name="equipmentqrCode" type="java.lang.String">
+            <column name="qrcode_img">
+                <comment>设备二维码</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

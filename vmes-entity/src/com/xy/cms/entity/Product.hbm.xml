@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.Product" table="product" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="productCode" type="java.lang.String">
+            <column name="product_code" length="40">
+                <comment>自动编号</comment>
+            </column>
+        </property>
+        <property name="userProductCode" type="java.lang.String">
+            <column name="userproduct_code" length="40">
+                <comment>用户产品编号</comment>
+            </column>
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="Name" length="80">
+                <comment>密码</comment>
+            </column>
+        </property>
+        <property name="dsc" type="java.lang.String">
+            <column name="dsc" length="200">
+                <comment>产品介绍</comment>
+            </column>
+        </property>
+         <property name="type" type="java.lang.String">
+            <column name="type" length="20">
+                <comment>产品分类</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Short">
+            <column name="status" >
+                <comment>0删除 1正常</comment>
+            </column>
+        </property>
+        <property name="typespec" type="java.lang.String">
+            <column name="typespec" length="20">
+                <comment>规格型号</comment>
+            </column>
+        </property>
+         <property name="unit" type="java.lang.String">
+            <column name="unit" length="20">
+                <comment>单位</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

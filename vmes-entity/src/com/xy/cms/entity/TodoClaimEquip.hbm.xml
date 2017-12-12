@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.TodoClaimEquip" table="todo_claim_equip">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+         <property name="claimId" type="java.lang.Long">
+            <column name="claim_id">
+            	 <comment>报工id</comment>
+            </column>
+        </property>
+        <property name="equipId" type="java.lang.Long">
+            <column name="equip_id">
+            	 <comment>设备id</comment>
+            </column>
+        </property>
+        <property name="equipCode" type="java.lang.String">
+            <column name="equip_code">
+            	 <comment>设备编号</comment>
+            </column>
+        </property>
+        <property name="equipName" type="java.lang.String">
+            <column name="equip_name">
+            	 <comment>设备名称</comment>
+            </column>
+        </property>
+        <property name="equipModel" type="java.lang.String">
+            <column name="equip_model">
+            	 <comment>设备类型</comment>
+            </column>
+        </property>
+         <property name="addDate" type="java.util.Date">
+            <column name="add_date">
+            	 <comment>添加时间</comment>
+            </column>
+        </property>
+         <property name="createby" type="java.lang.Long">
+            <column name="createby">
+            	 <comment>创建人</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>
