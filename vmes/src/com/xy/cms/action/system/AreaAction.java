@@ -35,17 +35,18 @@ import com.xy.cms.entity.ProductUint;
 import com.xy.cms.entity.Region;
 import com.xy.cms.service.AreaService;
 import com.xy.cms.service.CustomerService;
-
+   
 
 public class AreaAction extends BaseAction {
 	private AreaService areaService;
 	private Region region;
-	public String init(){
+	public String init(){ 
 		List<Region> regionList=areaService.queryAllRegion();
 		//初始化js树形结构
 		List<JsTree> treeList=new ArrayList<JsTree>();
 		for (Region region : regionList) {
 			JsTree root=new JsTree();
+			
 			root.setText(region.getName());
 			root.setId(region.getId().toString());
 			root.setParent((region.getParentid()==null || region.getParentid()==0)?"#":region.getParentid().toString());
