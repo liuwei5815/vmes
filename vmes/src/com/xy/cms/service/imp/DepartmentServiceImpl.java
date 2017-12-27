@@ -24,6 +24,7 @@ public class DepartmentServiceImpl extends BaseDAO implements DepartmentService{
 			Department newDepartment = new Department();
 			newDepartment.setName(department.getName());
 			newDepartment.setPid(department.getPid());
+			newDepartment.setType(department.getType());
 			if(department.getPid()==0){//一级部门
 				newDepartment.setLevel(1);
 			}else if(department.getPid()!=0){

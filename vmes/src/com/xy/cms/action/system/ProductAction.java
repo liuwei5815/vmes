@@ -111,6 +111,9 @@ public class ProductAction extends BaseAction{
 			}
 			Product product= productService.getProductById(Long.parseLong(id));
 			request.setAttribute("product", product);
+			if(CommonFunction.isNotNull(product.getType())){
+				request.setAttribute("maTpye", productService.queryMaType(Integer.valueOf(product.getType())));
+			}
 		} catch (BusinessException e) {
 			this.message=e.getMessage();
 			logger.error(e.getMessage(),e);
@@ -202,7 +205,96 @@ public class ProductAction extends BaseAction{
 					product.setUserProductCode(CommonFunction.isNotNull(newList.get(0).trim())?newList.get(0).trim():null);
 					product.setName(CommonFunction.isNotNull(newList.get(1).trim())?newList.get(1).trim():null);//产品名称
 					product.setTypespec(CommonFunction.isNotNull(newList.get(2).trim())?newList.get(2).trim():null);//规格型号
-					product.setDsc(CommonFunction.isNotNull(newList.get(3).trim())?newList.get(3).trim():null);//产品备注
+					//物料类型 -级
+					Long matId=null;
+					if(CommonFunction.isNotNull(CommonFunction.isNotNull(newList.get(3).trim()))){//excel有
+						MaterialType maType=productService.getMaTpyeByName(newList.get(3).trim()); 
+						if(CommonFunction.isNotNull(maType)){//一级存在
+							matId=maType.getId();
+							if(CommonFunction.isNotNull(newList.get(4).trim())){//excel有二级物料
+								MaterialType mtSec=productService.getMaTpyeByNameAndPid(newList.get(4).trim(), matId);
+								if(CommonFunction.isNotNull(mtSec)){//二级物料
+									matId=mtSec.getId();
+									if(CommonFunction.isNotNull(newList.get(5).trim())){//excel三级物料
+										MaterialType mtThr=productService.getMaTpyeByNameAndPid(newList.get(5).trim(), matId);
+										if(CommonFunction.isNotNull(mtThr)){
+											matId=mtThr.getId();
+										}else{
+											MaterialType mt=new MaterialType();
+											mt.setName(newList.get(5).trim());
+											mt.setPid(matId.intValue());
+											if(CommonFunction.isNotNull(newList.get(5).trim())){
+												matId=productService.addMaterialTypeWithId(mt);
+											}
+										}
+									}
+								}else{
+									MaterialType mt=new MaterialType();
+									mt.setName(newList.get(4).trim());
+									mt.setPid(matId.intValue());
+									matId=productService.addMaterialTypeWithId(mt);
+									if(CommonFunction.isNotNull(newList.get(5).trim())){//excel三级物料
+										MaterialType mtThr=productService.getMaTpyeByNameAndPid(newList.get(5).trim(), matId);
+										if(CommonFunction.isNotNull(mtThr)){
+											matId=mtThr.getId();
+										}else{
+											MaterialType newmt=new MaterialType();
+											newmt.setName(newList.get(5).trim());
+											newmt.setPid(matId.intValue());
+											if(CommonFunction.isNotNull(newList.get(5).trim())){
+												matId=productService.addMaterialTypeWithId(newmt);
+											}
+										}
+									}
+								}
+							}
+						}else{
+							MaterialType matype=new MaterialType();
+							matype.setName(newList.get(3).trim());
+							matype.setPid(null);
+							matId=productService.addMaterialTypeWithId(matype);
+							if(CommonFunction.isNotNull(newList.get(4).trim())){//excel有二级物料
+								MaterialType mtSec=productService.getMaTpyeByNameAndPid(newList.get(4).trim(), matId);
+								if(CommonFunction.isNotNull(mtSec)){//二级物料
+									matId=mtSec.getId();
+									if(CommonFunction.isNotNull(newList.get(5).trim())){//excel三级物料
+										MaterialType mtThr=productService.getMaTpyeByNameAndPid(newList.get(5).trim(), matId);
+										if(CommonFunction.isNotNull(mtThr)){
+											matId=mtThr.getId();
+										}else{
+											MaterialType mt=new MaterialType();
+											mt.setName(newList.get(5).trim());
+											mt.setPid(matId.intValue());
+											if(CommonFunction.isNotNull(newList.get(5).trim())){
+												matId=productService.addMaterialTypeWithId(mt);
+											}
+										}
+									}
+								}else{
+									MaterialType mt=new MaterialType();
+									mt.setName(newList.get(4).trim());
+									mt.setPid(matId.intValue());
+									matId=productService.addMaterialTypeWithId(mt);
+									if(CommonFunction.isNotNull(newList.get(5).trim())){//excel三级物料
+										MaterialType mtThr=productService.getMaTpyeByNameAndPid(newList.get(5).trim(), matId);
+										if(CommonFunction.isNotNull(mtThr)){
+											matId=mtThr.getId();
+										}else{
+											MaterialType newMt=new MaterialType();
+											newMt.setName(newList.get(5).trim());
+											newMt.setPid(matId.intValue());
+											if(CommonFunction.isNotNull(newList.get(5).trim())){
+												matId=productService.addMaterialTypeWithId(newMt);
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					product.setType(String.valueOf(matId));
+					product.setDsc(CommonFunction.isNotNull(newList.get(6).trim())?newList.get(6).trim():null);//产品备注
+					
 					productList.add(product);
 				}
 				/*employeeService.importEmpoyee();*/

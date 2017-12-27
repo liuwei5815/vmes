@@ -68,7 +68,7 @@ $(document).ready(function(){
 			<th class="th">用户产品编号</th>
 			<th class="th">产品名称</th>
 			<th class="th">规格/型号</th>
-			<!-- <th class="th">产品分类</th> -->
+			<th class="th">产品类型</th>
 			<th class="th">备注</th>
 			<th class="th">操作</th>
 		</tr>
@@ -82,9 +82,9 @@ $(document).ready(function(){
 			<td>${st.index+1}</td>
 			<td>${cell.productCode }</td>
 			<td>${cell.userProductCode}</td>
-			<td>${cell.name }</td>
+			<td>${cell.productName}</td>
 			<td>${cell.typespec }</td>
-		<%-- 	<td>${cell.type }</td> --%>
+			<td>${cell.mtName }</td>
 			<td>${cell.dsc }</td>
 			<td>
 		       <span class="img_edit hand" onclick="editProduct(${cell.id});"></span>

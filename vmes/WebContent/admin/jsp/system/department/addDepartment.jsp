@@ -70,6 +70,19 @@ $(document).ready(function(){
 			<span class="star"> *</span>
 		</td>
 	</tr>
+	
+	<tr class="validate">
+		<td>组织类型：</td>
+		<td>
+			<select name="department.type"  class="validate[required]" >
+				<option  value="公司" >公司</option>
+				<option  value="生产部门" >生产部门</option>
+				<option  value="行政部门" >行政部门</option>
+				<option  value="职能部门" >职能部门</option>
+			</select>
+			<span class="star"> *</span>
+		</td>
+	</tr>
 	<tr>
 		<td colspan="2"></td>
 	</tr>

@@ -142,7 +142,10 @@ public class MaterialAction extends BaseAction{
 			}
 			Material material= materialService.getMaterialById(Long.parseLong(id));
 			request.setAttribute("material", material);
-			request.setAttribute("maTpye", materialService.queryMaType(Integer.valueOf(material.getMaterialType())));
+			if(CommonFunction.isNotNull(material.getMaterialType())){
+				request.setAttribute("maTpye", materialService.queryMaType(Integer.valueOf(material.getMaterialType())));
+			}
+			
 		} catch (BusinessException e) {
 			this.message=e.getMessage();
 			logger.error(e.getMessage(),e);
@@ -255,7 +258,9 @@ public class MaterialAction extends BaseAction{
 											MaterialType mt=new MaterialType();
 											mt.setName(newList.get(5).trim());
 											mt.setPid(matId.intValue());
-											matId=materialService.addMaterialTypeWithId(mt);
+											if(CommonFunction.isNotNull(newList.get(5).trim())){
+												matId=materialService.addMaterialTypeWithId(mt);
+											}
 										}
 									}
 								}else{
@@ -271,7 +276,9 @@ public class MaterialAction extends BaseAction{
 											MaterialType newmt=new MaterialType();
 											newmt.setName(newList.get(5).trim());
 											newmt.setPid(matId.intValue());
-											matId=materialService.addMaterialTypeWithId(newmt);
+											if(CommonFunction.isNotNull(newList.get(5).trim())){
+												newList.get(5).trim();
+											}
 										}
 									}
 								}
@@ -293,7 +300,9 @@ public class MaterialAction extends BaseAction{
 											MaterialType mt=new MaterialType();
 											mt.setName(newList.get(5).trim());
 											mt.setPid(matId.intValue());
-											matId=materialService.addMaterialTypeWithId(mt);
+											if(CommonFunction.isNotNull(newList.get(5).trim())){
+												matId=materialService.addMaterialTypeWithId(mt);
+											}
 										}
 									}
 								}else{
@@ -309,7 +318,9 @@ public class MaterialAction extends BaseAction{
 											MaterialType newMt=new MaterialType();
 											newMt.setName(newList.get(5).trim());
 											newMt.setPid(matId.intValue());
-											matId=materialService.addMaterialTypeWithId(newMt);
+											if(CommonFunction.isNotNull(newList.get(5).trim())){
+												matId=materialService.addMaterialTypeWithId(newMt);
+											}
 										}
 									}
 								}

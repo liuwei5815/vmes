@@ -78,7 +78,7 @@ public class AdminServiceImpl extends BaseDAO implements AdminService {
 	}*/
 	public Admin getAdmin(Long adminId) throws BusinessException {
 		String hql="from Admin where roleId=2";
-		return (Admin)this.getUniqueResult(hql, null);
+		return (Admin) (this.getList(hql, null)!=null?this.getList(hql, null).get(0):null);
 	}
 	public void upateAdmin(Admin admin) throws BusinessException {
 		try {

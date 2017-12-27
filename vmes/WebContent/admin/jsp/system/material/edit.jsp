@@ -127,10 +127,10 @@ function chooseShip(tableId,showDomId,nameCn,gxId,pkId){
 		</td>
 	</tr>
 	<tr  style="border: medium none; background-color: transparent;" yzid="2">
-				<td style="text-align: right; padding-top: 3px; padding-bottom: 3px; border: medium none;">物料类型：</td>
+				<td style="text-align: right; padding-top: 3px; padding-bottom: 3px; border: medium none;">货品类型：</td>
 				<td style="padding-top: 3px; padding-bottom: 3px; border: medium none;">
-					<div style="float: left;"><input class="textinput simple" value="${maTpye}" id="type_lable" readonly="readonly" type="text">
-					<input id="type" targetid="84" name="material.materialType" value="${material.materialType}" not-null="1" lable="物料类型" datatype="1" type="hidden"></div>
+					<div style="float: left;"><input class="textinput simple validate[required,length[0,6]]" value="${maTpye}" id="type_lable" readonly="readonly" type="text">
+					<input id="type" targetid="84" name="material.materialType" value="${material.materialType}" not-null="1" lable="货品类型" datatype="1" type="hidden"></div>
 					<span class="icon_find" onclick="chooseShip('3','type','物料类型','','')">&nbsp; </span>
 				</td>
 			</tr>

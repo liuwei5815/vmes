@@ -90,5 +90,10 @@ public class CompanyServiceImpl extends BaseDAO implements CompanyService{
 	public void setAdminService(AdminService adminService) {
 		this.adminService = adminService;
 	}
+
+	@Override
+	public Company getCompanyOne() {
+		return (Company) (this.getAll(Company.class)!=null?this.getAll(Company.class).get(0):null);
+	}
 	
 }

@@ -88,10 +88,11 @@
 	
 	//编辑公司信息
 	function preEditCompany(){
+		var id= $("#companyId").val();
 		var diag = new top.Dialog();
 		diag.ID="model";
 		diag.Title = "编辑企业基本信息";
-		diag.URL = "${ctx}/admin/departmentAction!preEditCompany.action?";
+		diag.URL = "${ctx}/admin/departmentAction!preEditCompany.action?id="+id;
 		diag.Width=530;
 		diag.Height=550;
 		diag.show();
@@ -297,6 +298,7 @@ function deleteEmpoyee(){
 </div>
 <div class="box2" panelTitle="企业基本信息" roller="false">
  <form action="${ctx}/admin/departmentAction!queryEmployee.action" method="post" target="querytable" id="frm">
+ 	<input type="hidden" id="companyId" value="${company.id }" />
  	<input type="hidden" id="employeeId" value="" name="employeeId"/>
  	<input type="hidden" id="departmentId" value="0" name="departmentId"/>
  	<input type="hidden" id="orgtree" value='${orgtree }'/>

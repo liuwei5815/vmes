@@ -76,24 +76,32 @@ public class DepartmentAction extends BaseAction{
 		//查询正常使用的组织机构
 		List<Department> departmentList = departmentService.getNormalDepartment();
 		//查询公司的名称
-		Company company =companyService.getCompanyById(1L);
-		//初始化js树形结构
+//		Company company =companyService.getCompanyById(1L);
+//		//初始化js树形结构
 		List<JsTree> treeList = new ArrayList<JsTree>();
-		if(CommonFunction.isNotNull(company)){
-			JsTree root = new JsTree();
-			root.setText(company.getName());
-			root.setId("0");
-			root.setParent("#");
-			root.setState(new JsTree.State(true));
-			treeList.add(root);
-		}else{
-			JsTree root = new JsTree();
-			root.setText("请先添加企业基本信息");
-			root.setId("0");
-			root.setParent("#");
-			root.setState(new JsTree.State(true));
-			treeList.add(root);
-		}
+//		if(CommonFunction.isNotNull(company)){
+//			JsTree root = new JsTree();
+//			root.setText(company.getName());
+//			root.setId("0");
+//			root.setParent("#");
+//			root.setState(new JsTree.State(true));
+//			treeList.add(root);
+//		}else{
+//			JsTree root = new JsTree();
+//			root.setText("请先添加企业基本信息");
+//			root.setId("0");
+//			root.setParent("#");
+//			root.setState(new JsTree.State(true));
+//			treeList.add(root);
+//		}
+		
+		
+		JsTree root = new JsTree();
+		root.setText("组织架构树");
+		root.setId("0");
+		root.setParent("#");
+		root.setState(new JsTree.State(true));
+		treeList.add(root);
 		
 		for (Department dpt : departmentList) {
 			JsTree jsTree = new JsTree();
@@ -159,7 +167,12 @@ public class DepartmentAction extends BaseAction{
 	 * */
 	public String preEditCompany(){
 		try {
-			Company company =companyService.getCompanyById(1L);
+			String id = request.getParameter("id");
+			Long  companyId = null;
+			if(CommonFunction.isNotNull(id)){
+				companyId = Long.parseLong(id);
+			}
+			Company company =companyService.getCompanyById(companyId);
 			request.setAttribute("company",company);
 			if(CommonFunction.isNotNull(company)){
 			/*	String regionProvince = companyService.getRegionById(company.getProvince()).getName();

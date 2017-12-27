@@ -48,7 +48,7 @@ function doSubmit(){
 			return false; 
 		}   
 		var diag = new top.Dialog();
-		diag.Title = "打印设备";
+		diag.Title = "打印物料";
 		diag.URL = "${ctx}/admin/material!print.action?ids="+id_array;
 		diag.Height=900;
 		diag.Width=900;

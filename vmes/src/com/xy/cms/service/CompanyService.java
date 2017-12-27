@@ -42,4 +42,9 @@ public interface CompanyService {
 	 * 根据主键获取行政区域
 	 */
 	public Region findRegionById(Long regionId);
+	
+	/**
+	 * 查询符合条件的第一条记录
+	 */
+	public Company getCompanyOne();
 }

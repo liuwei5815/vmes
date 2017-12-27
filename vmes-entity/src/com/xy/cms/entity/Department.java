@@ -5,55 +5,103 @@ import java.util.Set;
 
 /**
  * 
- * 组织机构
+ * 缁勭粐鏈烘瀯
  * */
 public class Department implements java.io.Serializable{
 	/**
-	 *主键id
+	 *涓婚敭id
 	 */
 	private Long id;
 	
 	/**
-	 *父级部门id
+	 *鐖剁骇閮ㄩ棬id
 	 */
 	private Long pid;
 	
 	/**
-	 *部门名称
+	 *閮ㄩ棬鍚嶇О
 	 */
 	private String name;
 	
 	/**
-	 * 使用状态 1：正常 0：停用
+	 * 浣跨敤鐘舵�� 1锛氭甯� 0锛氬仠鐢�
 	 */
 	private Short status;
 	
 	/**
-	 * 创建人
+	 * 鍒涘缓浜�
 	 * */
 	private Long createby;
 	
 	/**
-	 * 添加时间
+	 * 娣诲姞鏃堕棿
 	 * */
 	private Date addDate;
 	
 	/**
-	 * 修改时间
+	 * 淇敼鏃堕棿
 	 */
 	private Date updateDate;
 	
 	/**
-	 * 排序字段  
+	 * 鎺掑簭瀛楁  
 	 * */
 	private Integer orderby;
 
 	/**
-	 * 部门级别
+	 * 閮ㄩ棬绾у埆
 	 * @return
 	 */
 	private Integer level;
 	
+	
+	
+	
+	private String path;//部门路径(中间使用“-”链接)
+	
+	private String number;//部门编码
+	
+	private String longnumber;//部门长编码
+	
+	private String type;  //类型:生产部门、行政部门、职能部门、公司
+	
+	
+	
+
+	
+	
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+
+	public String getLongnumber() {
+		return longnumber;
+	}
+
+	public void setLongnumber(String longnumber) {
+		this.longnumber = longnumber;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -125,6 +173,10 @@ public class Department implements java.io.Serializable{
 	public void setLevel(Integer level) {
 		this.level = level;
 	}
+	
+	
+
+
 
 	@Override
 	public String toString() {

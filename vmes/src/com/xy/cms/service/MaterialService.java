@@ -5,15 +5,8 @@ import java.util.Map;
 
 import com.xy.cms.common.base.QueryResult;
 import com.xy.cms.common.exception.BusinessException;
-import com.xy.cms.entity.Company;
-import com.xy.cms.entity.Department;
-import com.xy.cms.entity.Employee;
-import com.xy.cms.entity.Eqiupment;
-import com.xy.cms.entity.EqiupmentType;
 import com.xy.cms.entity.Material;
 import com.xy.cms.entity.MaterialType;
-import com.xy.cms.entity.Orders;
-import com.xy.cms.entity.OrdersDetail;
 
 public interface MaterialService {
 	/**
@@ -66,5 +59,8 @@ public interface MaterialService {
 	 * 查询物料
 	 */
 	public List<Material> queryMaterialByIds(Long[] ids);
-
+	/**
+	 * 查询物料
+	 */
+	public List<Material> queryAllMaterial();
 }

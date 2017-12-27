@@ -80,16 +80,16 @@ $(document).ready(function(){
 		</c:if>
 		<s:iterator value="list" status="st" var="cell">
 		<tr>
-			<td><input name="pId" type="checkbox" value="${cell[0].id}"/></td>
-			<td>${cell[0].materialCode }</td>
-			<td>${cell[0].usermaterialCode }</td>
-			<td>${cell[0].materialName }</td>
-			<td>${cell[0].materialSpec }</td>
-			<td>${cell[1].name }</td>
-			<td>${cell[0].materialUnit }</td>
+			<td><input name="pId" type="checkbox" value="${cell.id}"/></td>
+			<td>${cell.materialCode }</td>
+			<td>${cell.usermaterialCode }</td>
+			<td>${cell.materialName }</td>
+			<td>${cell.materialSpec }</td>
+			<td>${cell.name}</td>
+			<td>${cell.unit }</td>
 	    	<td>
-		      	<span class="img_edit hand" onclick="editEquipment(${cell[0].id});"></span>
-				<span class="img_delete hand" onclick="del(${cell[0].id});"></span>
+		      	<span class="img_edit hand" onclick="editEquipment(${cell.id});"></span>
+				<span class="img_delete hand" onclick="del(${cell.id});"></span>
 	    	</td>
 		</tr>
 		</s:iterator>

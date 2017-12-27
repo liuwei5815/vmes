@@ -3,21 +3,15 @@ package com.xy.cms.service.imp;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.google.zxing.qrcode.encoder.QRCode;
 import com.xy.cms.common.CommonFunction;
 import com.xy.cms.common.QrCodeFactoty;
 import com.xy.cms.common.base.BaseDAO;
 import com.xy.cms.common.base.BaseQEntity;
 import com.xy.cms.common.base.QueryResult;
 import com.xy.cms.common.exception.BusinessException;
-import com.xy.cms.entity.Company;
-import com.xy.cms.entity.Eqiupment;
-import com.xy.cms.entity.EqiupmentType;
 import com.xy.cms.entity.Material;
 import com.xy.cms.entity.MaterialType;
 import com.xy.cms.entity.Orders;
-import com.xy.cms.service.EquipmentService;
 import com.xy.cms.service.MaterialService;
 import com.xy.cms.service.SequenceService;
 
@@ -28,34 +22,28 @@ public class MaterialServiceImpl extends BaseDAO implements MaterialService{
 		QueryResult result = null;
 		Map m = new HashMap();
 		BaseQEntity qEntity = (BaseQEntity) map.get("qEntity");
-		Orders orders = (Orders) map.get("orders");
-		StringBuilder sql = new StringBuilder("select ma,maType from Material ma,MaterialType maType where ma.materialType=maType.id ");
+		StringBuilder sql = new StringBuilder();
+		sql.append("SELECT * FROM (SELECT m.name,mt.id,mt.material_name AS materialName,mt.type, ");
+		sql.append("mt.unit,mt.material_code AS materialCode,mt.qrcode,mt.usermaterial_code AS usermaterialCode,mt.material_spec AS materialSpec ");
+		sql.append("FROM `material` mt LEFT JOIN material_type m ON mt.type=m.id) source WHERE 1=1 ");
 		//物料名称
 		if(CommonFunction.isNotNull(map.get("maName"))){
-			sql.append(" and  ma.materialName like:maName ");
+			sql.append(" and  source.materialName like:maName ");
 			m.put("maName", "%"+map.get("maName")+"%");
 		}
 		//物料编号
 		if(CommonFunction.isNotNull(map.get("maCode"))){
-			sql.append(" and  ma.materialCode like:maCode ");
+			sql.append(" and  source.materialCode like:maCode ");
 			m.put("maCode", "%"+map.get("maCode")+"%");
 		}
 		//用户物料编号
 		if(CommonFunction.isNotNull(map.get("maUserCode"))){
-			sql.append(" and  ma.usermaterialCode like:maUserCode ");
+			sql.append(" and  source.usermaterialCode like:maUserCode ");
 			m.put("maUserCode", "%"+map.get("maUserCode")+"%");
 		}
-		/*if(CommonFunction.isNotNull(code)){
-			sql.append(" and (orders.orderCode like :code or orders.orderCodeAuto like :code)");
-			m.put("code", code);
-		}
-		if(CommonFunction.isNotNull(state)){
-			sql.append(" and  orders.state=:state ");
-			m.put("state", state);
-		}*/
-		sql.append(" order by ma.id desc");
+		sql.append(" order by source.id desc");
 	
-		result=this.getPageQueryResult(sql.toString(), m, qEntity);
+		result=this.getPageQueryResultSQLToMap(sql.toString(), m, qEntity);
 		return result;
 	}
 
@@ -149,6 +137,12 @@ public class MaterialServiceImpl extends BaseDAO implements MaterialService{
 		Map<String,Object> values= new HashMap<String, Object>();
 		values.put("ids", ids);
 		return this.getList(hql.toString(), values);
+	}
+
+	@Override
+	public List<Material> queryAllMaterial() {
+		String hql="from Material where 1=1";
+		return this.getList(hql, null);
 	}
 
 

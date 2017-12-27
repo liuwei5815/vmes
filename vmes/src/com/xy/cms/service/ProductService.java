@@ -7,6 +7,7 @@ import com.xy.cms.common.base.QueryResult;
 import com.xy.cms.common.exception.BusinessException;
 import com.xy.cms.entity.Eqiupment;
 import com.xy.cms.entity.Material;
+import com.xy.cms.entity.MaterialType;
 import com.xy.cms.entity.Product;
 import com.xy.cms.entity.ProductUint;
 
@@ -78,4 +79,21 @@ public interface ProductService {
 	public ProductUint getPuById(Long id);
 	
 	public List<ProductUint> getUnitByPid(Long id);
+	/**
+	 * 查询物料类型名称
+	 */
+	public String queryMaType(Integer maId);
+	
+	/**
+	 * 查询物料类型
+	 */
+	public MaterialType getMaTpyeByName(String name);
+	/**
+	 * 查询物料类型
+	 */
+	public MaterialType getMaTpyeByNameAndPid(String name,Long pid);
+	/**
+	 * 保存物料类型
+	 */
+	public Long addMaterialTypeWithId(MaterialType mt);
 }
