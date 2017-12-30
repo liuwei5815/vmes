@@ -113,6 +113,7 @@
 			    <value>com/xy/cms/entity/EquipmentParamData.hbm.xml</value>
 			    <value>com/xy/cms/entity/Test.hbm.xml</value>
 			    <value>com/xy/cms/entity/Test_lw.hbm.xml</value>
+			    <value>com/xy/cms/entity/Test_wk.hbm.xml</value>
 			</list>
 		</property>
 

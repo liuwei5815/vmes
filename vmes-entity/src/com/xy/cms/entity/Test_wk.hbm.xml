@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.Test_wk" table="test_wk">
+		<id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="state" type="java.lang.Long">
+            <column name="state">
+                <comment>状态</comment>
+            </column>
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="name">
+                <comment>名称</comment>
+            </column>
+        </property>
+        <property name="number" type="java.lang.String">
+            <column name="number">
+                <comment>编码</comment>
+            </column>
+        </property>
+                <property name="cdate" type="java.util.Date">
+            <column name="cdate">
+                <comment>创建时间</comment>
+            </column>
+        </property>
+                        <property name="udate" type="java.util.Date">
+            <column name="udate">
+                <comment>修改时间</comment>
+            </column>
+        </property>
+        
+	</class>
+</hibernate-mapping>
