@@ -22,7 +22,7 @@ public class DepartmentServiceImpl extends BaseDAO implements DepartmentService{
 	public void addDepartment(Department department) throws BusinessException {
 		if(CommonFunction.isNotNull(department)){
 			Department newDepartment = new Department();
-			newDepartment.setName(department.getName());
+
 			newDepartment.setPid(department.getPid());
 			newDepartment.setType(department.getType());
 			if(department.getPid()==0){//一级部门
@@ -34,6 +34,20 @@ public class DepartmentServiceImpl extends BaseDAO implements DepartmentService{
 					newDepartment.setLevel(3);
 				}
 			}
+			
+			if(department.getPid()==0){//一级部门
+//				newDepartment.setNumber(number);
+//				newDepartment.setLongnumber(parentDepartment.getLongnumber()+"_"+number);
+//				newDepartment.setName(department.getName());
+//				newDepartment.setPath(parentDepartment.getPath()+""+department.getName());	
+			}else {
+				
+			}
+			Department parentDepartment = this.getDepartmentById(department.getPid());
+//			if() {
+//				
+//			}
+		
 			newDepartment.setStatus((short) 1);
 			newDepartment.setAddDate(new Date());
 			this.save(newDepartment);

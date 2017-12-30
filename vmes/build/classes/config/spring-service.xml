@@ -74,5 +74,6 @@
 	
 	</bean>
 	<bean id="testService" class="com.xy.cms.service.imp.TestServiceImpl" />
+	<bean id="testlwService" class="com.xy.cms.service.imp.TestlwServiceImpl" />
 	
 </beans>

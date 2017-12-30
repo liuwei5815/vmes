@@ -112,6 +112,7 @@
 			    <value>com/xy/cms/entity/TodoClaimEquip.hbm.xml</value> 
 			    <value>com/xy/cms/entity/EquipmentParamData.hbm.xml</value>
 			    <value>com/xy/cms/entity/Test.hbm.xml</value>
+			    <value>com/xy/cms/entity/Test_lw.hbm.xml</value>
 			</list>
 		</property>
 

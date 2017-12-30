@@ -70,12 +70,14 @@ public class TestAction  extends BaseAction{
 	
 	public String add(){
 		try {
-			test.setCdate(new Date());
-			testService.saveTest(test);
-			this.message="操作成功";
-			request.setAttribute("successflag","1");
+			if(CommonFunction.isNull(test)){
+				throw new BusinessException("参数错误");
+			}
+			testService.saveTest(test);	
+			this.message = "添加成功";
+			request.setAttribute("successflag", "1");
 		} catch (BusinessException e) {
-			this.message = e.getMessage();
+			this.message=e.getMessage();
 			logger.error(e.getMessage(),e);
 		}
 		return "add";

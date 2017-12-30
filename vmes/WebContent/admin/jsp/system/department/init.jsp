@@ -105,14 +105,14 @@ var ctxmenus = function(o, cb) {
 	var items = {
 		"rename" : null,
 		"ccp" : null,
-		"editCompany" : {
+		/**	"editCompany" : {
 			"separator_before" : false,
 			"separator_after" : false,
 			"label" : "编辑企业基本信息",
 			"action" : function(data) {
 				preEditCompany()
 			}
-		},
+		}, */
 		"create" : {
 			"separator_before" : false,
 			"separator_after" : false,

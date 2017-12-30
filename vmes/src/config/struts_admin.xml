@@ -323,5 +323,13 @@
 		<result name="edit">/admin/jsp/system/test/edit.jsp</result>
 		<result name="add">/admin/jsp/system/test/add.jsp</result>
 	</action>	
+	
+	
+	<action name="testlw" class="com.xy.cms.action.system.TestlwAction">
+		<result name="init">/admin/jsp/system/testlw/init.jsp</result>
+		<result name="list">/admin/jsp/system/testlw/list.jsp</result>
+		<result name="edit">/admin/jsp/system/testlw/edit.jsp</result>
+		<result name="add">/admin/jsp/system/testlw/add.jsp</result>
+	</action>	
 </package>
 </struts>

@@ -112,7 +112,7 @@ public class DepartmentAction extends BaseAction{
 		}
 		String treeJson = JSON.toJSONString(treeList);
 		request.setAttribute("orgtree", treeJson);
-		request.setAttribute("comName", company==null?"请先添加企业基本信息":company.getName());
+		request.setAttribute("comName", company==null?"组织架构树":company.getName());
 		return "init";
 	}
 	
@@ -250,24 +250,32 @@ public class DepartmentAction extends BaseAction{
 		//查询正常使用的组织机构
 		List<Department> departmentList = departmentService.getNormalDepartment();
 		//查询公司的名称
-		Company company =companyService.getCompanyById(1L);
+//		Company company =companyService.getCompanyById(1L);
 		//初始化js树形结构
 		List<JsTree> treeList = new ArrayList<JsTree>();
-		if(CommonFunction.isNotNull(company)){
-			JsTree root = new JsTree();
-			root.setText(company.getName());
-			root.setId("0");
-			root.setParent("#");
-			root.setState(new JsTree.State(true));
-			treeList.add(root);
-		 }else{
-			JsTree root = new JsTree();
-			root.setText("请先添加企业基本信息");
-			root.setId("0");
-			root.setParent("#");
-			root.setState(new JsTree.State(true));
-			treeList.add(root);
-		}
+//		if(CommonFunction.isNotNull(company)){
+//			JsTree root = new JsTree();
+//			root.setText(company.getName());
+//			root.setId("0");
+//			root.setParent("#");
+//			root.setState(new JsTree.State(true));
+//			treeList.add(root);
+//		 }else{
+//			JsTree root = new JsTree();
+//			root.setText("请先添加企业基本信息");
+//			root.setId("0");
+//			root.setParent("#");
+//			root.setState(new JsTree.State(true));
+//			treeList.add(root);
+//		}
+		
+		JsTree root = new JsTree();
+		root.setText("组织架构树");
+		root.setId("0");
+		root.setParent("#");
+		root.setState(new JsTree.State(true));
+		treeList.add(root);
+		
 		for (Department dpt : departmentList) {
 			JsTree jsTree = new JsTree();
 			jsTree.setId(dpt.getId().toString());
