@@ -64,6 +64,26 @@
 	     <result name="list">/admin/jsp/system/customer/list.jsp</result>
 	     <result name="import">/admin/jsp/system/customer/import.jsp</result>
 	</action>
+	
+	
+	<!-- 客户信息管理 -->
+	<action name="customerInfo" class="com.xy.cms.action.system.CustomerInfoAction">
+	     <result name="init">/admin/jsp/system/customer/init.jsp</result>
+	     <result name="add">/admin/jsp/system/customer/add.jsp</result>
+	     <result name="edit">/admin/jsp/system/customer/edit.jsp</result>
+	     <result name="list">/admin/jsp/system/customer/list.jsp</result>
+	     <result name="import">/admin/jsp/system/customer/import.jsp</result>
+	</action>	
+	
+	<!-- 客户类型管理 -->
+	<action name="customerType" class="com.xy.cms.action.system.CustomerTypeAction">
+	     <result name="init">/admin/jsp/system/customer/init.jsp</result>
+	     <result name="add">/admin/jsp/system/customer/add.jsp</result>
+	     <result name="edit">/admin/jsp/system/customer/edit.jsp</result>
+	     <result name="list">/admin/jsp/system/customer/list.jsp</result>
+	     <result name="import">/admin/jsp/system/customer/import.jsp</result>
+	</action>		
+	
 	<!-- 权限管理 -->
 	<action name="power" class="com.xy.cms.action.system.PowerAction">
 
@@ -162,6 +182,22 @@
 		<result name="suc">/admin/jsp/system/orders/tree.jsp</result>
 		
 	</action>
+	
+	
+	<!-- 销售菜单下的产品配置 -->
+	<action name="productOfOrder" class="com.xy.cms.action.system.ProductOfOrderAction">
+		<result name="init">/admin/jsp/system/productOfOrder/init.jsp</result>
+		<result name="list">/admin/jsp/system/productOfOrder/list.jsp</result>
+		<result name="add">/admin/jsp/system/productOfOrder/add.jsp</result>
+		<result name="edit">/admin/jsp/system/productOfOrder/edit.jsp</result>
+		<result name="import">/admin/jsp/system/productOfOrder/import.jsp</result>
+		<result name="tree">/admin/jsp/system/productOfOrder/productUnit/tree.jsp</result>
+		<result name="tree_init">/admin/jsp/system/productOfOrder/productUnit/tree_init.jsp</result>
+		<result name="addUnit">/admin/jsp/system/productOfOrder/productUnit/add.jsp</result>
+		<result name="editUnit">/admin/jsp/system/productOfOrder/productUnit/edit.jsp</result>
+		<result name="suc">/admin/jsp/system/orders/tree.jsp</result>
+	</action>
+	
 	<!-- 日志查看 -->
 	<action name="sys_log" class="com.xy.cms.action.system.SysLogAction">
 		<result name="init">/admin/jsp/system/syslog/init.jsp</result>
