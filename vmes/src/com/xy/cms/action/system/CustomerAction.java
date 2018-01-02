@@ -41,6 +41,7 @@ public class CustomerAction extends BaseAction {
 		
 		return "init";
 	}
+	
 	public String query() throws Exception{
 		this.queryTemplate(new BaseActionQueryPageCallBack() {
 			
