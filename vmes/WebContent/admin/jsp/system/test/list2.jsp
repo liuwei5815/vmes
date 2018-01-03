@@ -184,4 +184,3 @@ function customerActive() {
 
 </body>
 </html>
-

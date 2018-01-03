@@ -65,6 +65,3 @@ function doQueryTab(){
 
 
 
-
-
-

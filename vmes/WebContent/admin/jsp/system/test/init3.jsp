@@ -84,7 +84,3 @@ function doSubmit(){
 </html>
 
 
-
-
-
-
