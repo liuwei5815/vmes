@@ -29,7 +29,7 @@ function doSubmit(){
 	$("#frm").submit();	
 }
 function del(id){
-	if(id == ""){
+	if(id == ""){ 
 		top.Dialog.alert("参数错误");
 		return false;
 	}

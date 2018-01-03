@@ -16,7 +16,7 @@
 </style>
 </head>
 <body>
-	<div class="position">
+	<div class="position"> 
 		<div class="center">
 		<div class="left">
 		<div class="right">

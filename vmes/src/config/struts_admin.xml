@@ -352,14 +352,21 @@
 		<result name="empinit">/admin/jsp/system/account/emp/init.jsp</result>
 		<result name="list">/admin/jsp/system/account/emp/list.jsp</result>
 	</action> 
-	
+	<!--  test测试
 	<action name="test" class="com.xy.cms.action.system.TestAction">
 		<result name="init">/admin/jsp/system/test/init.jsp</result>
 		<result name="list">/admin/jsp/system/test/list.jsp</result>
 		<result name="edit">/admin/jsp/system/test/edit.jsp</result>
 		<result name="add">/admin/jsp/system/test/add.jsp</result>
 	</action>	
+	-->
 	
+	<action name="test" class="com.xy.cms.action.system.TestAction">
+		<result name="init">/admin/jsp/system/test/init2.jsp</result>
+		<result name="list">/admin/jsp/system/test/list2.jsp</result>
+		<result name="edit">/admin/jsp/system/test/edit2.jsp</result>
+		<result name="add">/admin/jsp/system/test/add2.jsp</result>
+	</action> 
 	
 	<action name="testlw" class="com.xy.cms.action.system.TestlwAction">
 		<result name="init">/admin/jsp/system/testlw/init.jsp</result>

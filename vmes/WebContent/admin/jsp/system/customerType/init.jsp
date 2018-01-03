@@ -34,7 +34,7 @@
             <button onclick='return openAddWin()' type="button"><span class="icon_add">新增</span></button>
 		  </td>
         </tr>
-        <tr>
+        <tr> 
         </tr>
       </table>
       </form>

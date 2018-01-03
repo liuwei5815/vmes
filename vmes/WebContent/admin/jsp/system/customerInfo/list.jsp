@@ -30,7 +30,7 @@
   font-weight: normal;
   text-rendering: auto;
 }
-.checkbox label {
+.checkbox label { 
   width: 55px;
   height: 25px;
   background: #ccc;

@@ -33,7 +33,7 @@ function unload(){
 	    	document.forms[0].message.value = "";	   
 	    }
 	}
-}
+} 
 
 $(document).ready(function(){ 
 	unload();
