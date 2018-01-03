@@ -8,19 +8,49 @@ public class Customer implements java.io.Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 321L;
+	private static final Long serialVersionUID = 6268861942542577400L;
+
+	/**
+	 * 
+	 */
+
 
 	/**
 	 * 主键id
 	 * */
 	private Long id;
+	
+	/**
+	 * 客户编号
+	 * */
+	private String customerCode;
+
+	/**
+	 * 客户类型
+	 */
+    private String typeId;
+    
+	/**
+	 * 部门id
+	 */
+    private Long departmentId;
+    
+    /**
+     * 激活状态
+     */
+    private int activeState;
+    
+    /**
+     * 状态
+     */
+    private String status;
 
 	/**
 	 * 客户名称
 	 * */
 	private String name;
-
 	
+
 	/**
 	 * 客户电话
 	 * */
@@ -43,10 +73,6 @@ public class Customer implements java.io.Serializable {
 	 * */
 	private Timestamp updateDate;
 
-	/**
-	 * 客户编号
-	 * */
-	private String customerCode;
 
 	public Long getId() {
 		return id;
@@ -111,6 +137,34 @@ public class Customer implements java.io.Serializable {
 	public void setUpdateDate(Timestamp updateDate) {
 		this.updateDate = updateDate;
 	}
+	
+    
+    public void setTypeId(String typeId){
+        this.typeId = typeId;
+    }
+    
+    public String getTypeId(){
+        return this.typeId;
+    }
+    
+    public void setDepartmentId(Long departmentId){
+        this.departmentId = departmentId;
+    }
+    
+    public Long getDepartmentId(){
+        return this.departmentId;
+    }
+    
+    
+    public void setActiveState(int activeState){
+        this.activeState = activeState;
+    }
+    
+    public int getActiveState(){
+        return this.activeState;
+    }
+    
+
 
 	
 }

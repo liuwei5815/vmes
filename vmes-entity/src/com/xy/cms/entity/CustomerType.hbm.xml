@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.CustomerType" table="customer_type">
+		<id name="id" type="java.lang.String">
+            <column name="Id" />
+        </id>
+        <property name="departmentId" type="java.lang.String">
+             <column name="department_id">
+                <comment>组织id</comment>
+            </column>
+        </property>  
+        <property name="typeName" type="java.lang.String">
+             <column name="type_name">
+                <comment>客户类型</comment>
+            </column>
+        </property>
+         <property name="describe" type="java.lang.String">
+            <column name="describe" />
+        </property>
+	</class>
+</hibernate-mapping>

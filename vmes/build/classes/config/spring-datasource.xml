@@ -97,9 +97,7 @@
 				<value>com/xy/cms/entity/AppRolePower.hbm.xml</value>
 				<value>com/xy/cms/entity/Orders.hbm.xml</value>
 				<value>com/xy/cms/entity/OrdersDetail.hbm.xml</value>
-				<value>com/xy/cms/entity/Product.hbm.xml</value>
 				<value>com/xy/cms/entity/ProductUnit.hbm.xml</value>
-				<value>com/xy/cms/entity/Customer.hbm.xml</value>
 				<value>com/xy/cms/entity/ProduceplanExceptionHandle.hbm.xml</value>
 				<value>com/xy/cms/entity/ProduceplanExceptionHandleHistory.hbm.xml</value>
 				<value>com/xy/cms/entity/ProduceplanTodoClaim.hbm.xml</value>
@@ -113,7 +111,12 @@
 			    <value>com/xy/cms/entity/EquipmentParamData.hbm.xml</value>
 			    <value>com/xy/cms/entity/Test.hbm.xml</value>
 			    <value>com/xy/cms/entity/Test_lw.hbm.xml</value>
-			    <value>com/xy/cms/entity/Test_wk.hbm.xml</value>
+			    <value>com/xy/cms/entity/Test_wk.hbm.xml</value>		    
+			    <value>com/xy/cms/entity/Customer.hbm.xml</value>
+			    <value>com/xy/cms/entity/CustomerContact.hbm.xml</value>
+			    <value>com/xy/cms/entity/CustomerContactAddress.hbm.xml</value>
+			    <value>com/xy/cms/entity/CustomerType.hbm.xml</value>		    
+				<value>com/xy/cms/entity/Product.hbm.xml</value>
 			</list>
 		</property>
 
