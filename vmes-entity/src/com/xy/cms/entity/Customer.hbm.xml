@@ -4,7 +4,8 @@
 <hibernate-mapping>
 	<class name="com.xy.cms.entity.Customer" table="customer">
 		<id name="id" type="java.lang.Long">
-            <column name="id" />
+            <column name="id">
+             </column>
             <generator class="native" />
         </id>
         <property name="name" type="java.lang.String">
@@ -28,10 +29,29 @@
         </property>
         <property name="state" type="java.lang.Integer">
             <column name="state">
+                <comment>状态</comment>
             </column>
         </property>
          <property name="customerCode" type="java.lang.String">
-            <column name="customerCode"/>
+             <column name="customerCode">
+                <comment>状态</comment>
+            </column>
         </property>
+        <property name="typeId" type="java.lang.String">
+             <column name="type_id">
+                <comment>客户类型</comment>
+            </column>
+        </property>
+        <property name="departmentId" type="java.lang.Long">
+             <column name="department_id">
+                <comment>组织id</comment>
+            </column>
+        </property>  
+        <property name="activeState" type="java.lang.Integer">
+            <column name="active_state">
+                <comment>激活状态</comment>
+            </column>
+        </property>  
+ 
 	</class>
 </hibernate-mapping>
