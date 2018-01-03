@@ -1,79 +1,45 @@
-<!DOCTYPE html PUBLIC "
--//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="/tags/core" prefix="c"%>
-<%@ taglib uri="/WEB-INF/tld/ModelTag.tld" prefix="m" %>
 <%@ include file="/admin/jsp/common/common.jsp"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<style type="text/css">
-#checkboxTable{
-	table-layout:fixed;
-}
-#checkboxTable tr td {
-	width:100px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-align: center;
-	text-overflow:ellipsis;
-}
-#frm{
-	width:95%;
-	margin:0 auto;
-}
-</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=eYf9sA6yVTFHlh9ytU4a0EYY"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>建表</title>
-
+<title>添加设备</title>
 <script type="text/javascript" charset="utf-8"
 	src="${ctxAdmin}/js/ueditor.config.js"></script>
 <script type="text/javascript" charset="utf-8"
 	src="${ctxAdmin}/js/ueditor.all.min.js"> </script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=eYf9sA6yVTFHlh9ytU4a0EYY"></script>
 <script type="text/javascript">
-jQuery(document).ready(function(){
-	unload();
-});
+function doSubmit(){
+	$("#frm").submit();	
+}
+
+function cancel(){
+	top.Dialog.close();
+}
 
 function unload(){
-    if($('#successflag').val() == "1"){//执行成功
-    	top.Dialog.alert($("#message").val(),function(){
-    		top.Dialog.close();
+    if(document.frm.successflag.value == "1"){//执行成功
+    	top.Dialog.alert("保存成功",function(){
+    		cancel();
     	});
-    	parent.frmright.doQueryTab();
-		
+    	this.parent.frmright.window.location.href="${ctx}/admin/customer!init.action";	
 	}else{
-		if($("#message").val()!=""){
-	    	//top.Dialog.alert($("#message").val());
-	    	$("body").html($("#message").val());
-	    	$("#message").val("");
+		if(document.forms[0].message.value !=""){
+			top.Dialog.alert(document.forms[0].message.value);
+	    	document.forms[0].message.value = "";	   
 	    }
 	}
-	return false;
 }
-function doSubmit(){
-	var t_number = $("#number").val();
-	if(t_number == ""){
-		top.Dialog.alert("请输入编码");
-		return;
-	}
-	
-	var t_name = $("#name").val();
-	if(t_name == ""){
-		top.Dialog.alert("请输入名称");
-		return;
-	}
-	
-	var t_state = $("#state").val();
-	if(t_state == ""){
-		top.Dialog.alert("请输入状态");
-		return;
-	}
-	
-	$("#frm").submit();
-}
+
+$(document).ready(function(){ 
+	unload();
+});
 </script>
+
 </head>
 <body>
 <div class="static_box1">
@@ -85,35 +51,38 @@ function doSubmit(){
 <div class="box1_middlecenter">
 <div class="box1_middleleft2">
 <div class="box1_middleright2">
-
-<div style="">
+<div style="padding: 0 20px 0 20px;">
+	
+	<s:form action="admin/customer!add.action" method="post" theme="simple" id="frm">
 	<input type="hidden" name="message" id="message" value="${message}" /> 
-	<input type="hidden" name="successflag" id="successflag" value="${successflag}" />
-	<s:form action="admin/test!add.action" method="post" theme="simple" id="frm">
+	<input type="hidden" name="successflag" id="successflag" value="${successflag}" /> 
+	<input type="hidden" name="department.pid" value="${pid }" />
 	<table width="100%" class="tableStyle" transmode="true">
-			<tr class="validate">
-				<td>编码：</td>
-				<td>
-					<input type="text" id="number" name="test.number" />
-				</td>
-			</tr>
-			<tr class="validate">
-				<td>名称：</td>
-				<td>
-					<input type="text" id="name" name="test.name" />
-				</td>
-			</tr>
-			<tr class="validate">
-				<td>状态：</td>
-				<td>
-					<input type="text" id="state" name="test.state" />
-				</td>
-			</tr>
-		<tr>
-			<td colspan="2">&nbsp;</td>
-		 </tr>
+	<tr class="validate">
+		<td>客户名称：</td>
+		<td>
+			<input type="text" name="customer.name" class="validate[required,length[0,15]]" />
+			<span class="star"> *</span>
+		</td>
+	</tr>
+	<tr class="validate">
+		<td>客户地址：</td>
+		<td>
+			<input type="text" name="customer.contact" value="${customer.contact}" class="validate[length[0,30]]" />
+		</td>
+	</tr>
+	<tr class="validate">
+		<td>联系方式：</td>
+		<td>
+			<input type="text" name="customer.tel"  class="validate[custom[mobilephone]]" />
+			
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"></td>
+	</tr>
 	</table>
-</s:form>
+	</s:form>
 </div>
 </div>
 </div>
@@ -124,6 +93,18 @@ function doSubmit(){
 </div>
 </div>
 </div>
+<%@include file="/admin/jsp/common/image_upload.jsp"%>
+<%@include file="/admin/jsp/system/model/common/model.jsp" %>
+<table width="100%" class="tableStyle" transmode="true">
+	<tr>
+		<td colspan="2">
+		  <p>
+		    <button onclick="return doSubmit();" type="button" id="preserve"><span class="icon_save">保 存</span> </button>
+            <button onclick="top.Dialog.close();" type="button"><span class="icon_no">关 闭</span> </button>
+			</p>
+		</td>
+	</tr>
+</table> 
 </body>
 </html>
 
