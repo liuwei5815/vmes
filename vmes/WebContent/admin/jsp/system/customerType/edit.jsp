@@ -53,22 +53,23 @@ $(document).ready(function(){
 <div class="box1_middleright2">
 <div style="padding: 0 20px 0 20px;">
 	
-	<s:form action="admin/customer!add.action" method="post" theme="simple" id="frm">
+	<s:form action="admin/customerType!edit.action" method="post" theme="simple" id="frm">
 	<input type="hidden" name="message" id="message" value="${message}" /> 
 	<input type="hidden" name="successflag" id="successflag" value="${successflag}" /> 
 	<input type="hidden" name="department.pid" value="${pid }" />
+	<input type="hidden" name="customerType.id" id="id" value="${customerType.id}" />
 	<table width="100%" class="tableStyle" transmode="true" style="height: 100px">
 	<tr>
 		<td>客户类型：</td>
 		<td>
-			<input type="text" name="customer.type" class="validate[required,length[0,15]]" />
+			<input type="text" name="customerType.typeName" class="validate[required,length[0,15]]" />
 			<span class="star"> *</span>
 		</td>
 	</tr>
 	<tr class="validate">
 		<td>客户说明：</td>
 		<td>
-			<input type="text" name="customer.description" class="validate[required,length[0,15]]" />
+			<input type="text" name="customerType.description" class="validate[required,length[0,15]]" />
 			<span class="star"> *</span>
 		</td>
 	</tr>

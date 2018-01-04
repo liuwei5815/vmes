@@ -52,11 +52,11 @@ public class CustomerTypeAction extends BaseAction {
 //	}
 	
 	public String preEdit(){
-		String id = request.getParameter("id");
+		String typeName = request.getParameter("typeName");
 		try {
-			if(CommonFunction.isNull(id))
-				throw new BusinessException("id不能为空");
-			customerType = customerTypeService.getCustomerType(Long.parseLong(id));
+			if(CommonFunction.isNull(typeName))
+				throw new BusinessException("客户类型不能为空");
+			customerType = customerTypeService.getCustomerType(typeName);
 		} catch (BusinessException e) {
 			logger.error(e.getMessage(),e);
 		}
@@ -96,14 +96,14 @@ public class CustomerTypeAction extends BaseAction {
 	}
 	
 	public void delete(){
-		String id = request.getParameter("id");
+		String typeName = request.getParameter("typeName");
 		Map param = new HashMap();
 		PrintWriter writer= null;
 		try {
 			writer = response.getWriter();
-			if(CommonFunction.isNull(id))
-				throw new BusinessException("id不能为空");
-			customerTypeService.removeCustomerType(Long.parseLong(id));
+			if(CommonFunction.isNull(typeName))
+				throw new BusinessException("typeName不能为空");
+			customerTypeService.removeCustomerType(typeName);
 			param.put("code",1);
 			param.put("msg","删除成功");
 		} catch (BusinessException e) {

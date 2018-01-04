@@ -66,8 +66,10 @@ public class CustomerTypeServiceImpl extends BaseDAO implements CustomerTypeServ
 
 	
 	@Override
-	public CustomerType getCustomerType(long id) throws BusinessException{
-		CustomerType banner = (CustomerType) this.get(CustomerType.class,id);
+	public CustomerType getCustomerType(String typeName) throws BusinessException{
+		String hql = "from CustomerType ct where ct.typeName = '"+typeName+"' ";
+		CustomerType banner = (CustomerType)this.find(hql).get(0);
+	//	CustomerType banner = (CustomerType) this.get(CustomerType.class,id);
 		return banner;
 	}
 
@@ -88,8 +90,9 @@ public class CustomerTypeServiceImpl extends BaseDAO implements CustomerTypeServ
 
 
 	@Override
-	public void removeCustomerType(long id) throws BusinessException {
-		CustomerType test = this.getCustomerType(id);
+	public void removeCustomerType(String typeName) throws BusinessException {
+		String hql = "from CustomerType ct where ct.typeName = '"+typeName+"' ";
+		CustomerType test = (CustomerType)this.find(hql).get(0);
 		
 		if(test == null)
 			throw new BusinessException("查询对象为空");

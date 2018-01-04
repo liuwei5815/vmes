@@ -39,7 +39,7 @@ public interface CustomerTypeService {
 	 * @return
 	 * @throws BusinessException
 	 */
-	public CustomerType getCustomerType(long id) throws BusinessException;
+	public CustomerType getCustomerType(String typeName) throws BusinessException;
 	
 	/**
 	 * 更新信息 
@@ -52,5 +52,5 @@ public interface CustomerTypeService {
 	 * @param id
 	 * @throws BusinessException
 	 */
-	public void removeCustomerType(long id) throws BusinessException;
+	public void removeCustomerType(String typeName) throws BusinessException;
 }

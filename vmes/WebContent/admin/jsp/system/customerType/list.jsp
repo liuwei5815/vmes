@@ -10,14 +10,16 @@
 <script type='text/javascript' src="${ctx }/admin/js/page.js"></script>
 <script>
 
-function openEditWin(id){
+function openEditWin(typeName){
 	//if(id == ""){
 	//	top.Dialog.alert("参数错误");
 	//	return false;	
 	//}
 	var diag = new top.Dialog();
+	alert("aaaaaa");
 	diag.Title = "编辑客户信息";
-	diag.URL = "${ctx}/admin/customerType!edit.action?id=" + id;
+	diag.URL = "${ctx}/admin/customerType!preEdit.action?typeName=" + typeName;
+	alert("bbbb");
 	diag.Height=200;
 	diag.Width=650;
 	diag.show();
@@ -78,8 +80,8 @@ function del(id){
 			<td>${cell.typeName}</td>
 			<td>${cell.description}</td>
 			<td width="70" style = "text-align: center">
-				<span class="img_edit hand" title="编辑"	onclick="openEditWin('${cell.id}');"></span>
-				<span class="img_delete hand" title="删除" onclick="del('${cell.id}');"></span>
+				<span class="img_edit hand" title="编辑"	onclick="openEditWin('${cell.typeName}');"></span>
+				<span class="img_delete hand" title="删除" onclick="del('${cell.typeName}');"></span>
 			</td>
 		</tr>
 	</s:iterator> 
