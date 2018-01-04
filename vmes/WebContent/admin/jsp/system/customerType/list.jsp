@@ -16,10 +16,8 @@ function openEditWin(typeName){
 	//	return false;	
 	//}
 	var diag = new top.Dialog();
-	alert("aaaaaa");
 	diag.Title = "编辑客户信息";
 	diag.URL = "${ctx}/admin/customerType!preEdit.action?typeName=" + typeName;
-	alert("bbbb");
 	diag.Height=200;
 	diag.Width=650;
 	diag.show();
