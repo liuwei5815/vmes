@@ -53,7 +53,7 @@ $(document).ready(function(){
 <div class="box1_middleright2">
 <div style="padding: 0 20px 0 20px;">
 	
-	<s:form action="admin/customer!add.action" method="post" theme="simple" id="frm">
+	<s:form action="admin/test!add.action" method="post" theme="simple" id="frm">
 	<input type="hidden" name="message" id="message" value="${message}" /> 
 	<input type="hidden" name="successflag" id="successflag" value="${successflag}" /> 
 	<input type="hidden" name="department.pid" value="${pid }" />
