@@ -17,7 +17,7 @@ function openEditWin(id){
 	//}
 	var diag = new top.Dialog();
 	diag.Title = "编辑客户信息";
-	diag.URL = "${ctx}/admin/test!edit.action?id=" + id;
+	diag.URL = "${ctx}/admin/test!edit.action?id=" + id; 
 	diag.Height=200;
 	diag.Width=650;
 	diag.show();
