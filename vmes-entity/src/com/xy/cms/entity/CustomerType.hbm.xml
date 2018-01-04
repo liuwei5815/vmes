@@ -6,7 +6,7 @@
 		<id name="id" type="java.lang.String">
             <column name="Id" />
         </id>
-        <property name="departmentId" type="java.lang.String">
+        <property name="departmentId" type="java.lang.Long">
              <column name="department_id">
                 <comment>组织id</comment>
             </column>
@@ -16,8 +16,8 @@
                 <comment>客户类型</comment>
             </column>
         </property>
-         <property name="describe" type="java.lang.String">
-            <column name="describe" />
+         <property name="description" type="java.lang.String">
+            <column name="description" />
         </property>
 	</class>
 </hibernate-mapping>

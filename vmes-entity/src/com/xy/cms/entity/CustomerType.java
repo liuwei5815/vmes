@@ -14,7 +14,7 @@ public class CustomerType implements java.io.Serializable {
     private String typeName;
 
     /** 说明 */
-    private String describe;
+    private String description;
 
     /**
      * 获取id
@@ -77,8 +77,8 @@ public class CustomerType implements java.io.Serializable {
      * 
      * @return 说明
      */
-    public String getDescribe() {
-        return this.describe;
+    public String getDescription() {
+        return this.description;
     }
 
     /**
@@ -87,7 +87,7 @@ public class CustomerType implements java.io.Serializable {
      * @param describe
      *          说明
      */
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
