@@ -37,6 +37,7 @@ jQuery(document).ready(function(){
 });
 
 function unload(){
+	alert("zzzzz");
     if($('#successflag').val() == "1"){//执行成功
     	top.Dialog.alert($("#message").val(),function(){
     		top.Dialog.close();

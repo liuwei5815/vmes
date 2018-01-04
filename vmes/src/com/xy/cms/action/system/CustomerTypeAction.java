@@ -72,6 +72,7 @@ public class CustomerTypeAction extends BaseAction {
 		} catch (BusinessException e) {
 			this.message = e.getMessage();
 			logger.error(e.getMessage(),e);
+			request.setAttribute("successflag","0");
 		}
 		return "edit";
 	}
@@ -91,6 +92,7 @@ public class CustomerTypeAction extends BaseAction {
 		} catch (BusinessException e) {
 			this.message=e.getMessage();
 			logger.error(e.getMessage(),e);
+			request.setAttribute("successflag", "0");
 		}
 		return "add";
 	}
