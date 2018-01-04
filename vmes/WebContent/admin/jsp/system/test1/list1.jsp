@@ -76,6 +76,7 @@
   background: green;
 }
 </style>
+
 <script type='text/javascript' src="${ctx }/admin/js/page.js"></script>
 <script>
 //客户激活或者取消激活按钮
@@ -91,6 +92,7 @@ function customerActive() {
 	
 }
 
+	
 function editProduct(id){
 	var diag = new top.Dialog();
 	diag.Title = "编辑产品信息";
@@ -108,7 +110,7 @@ function del(id){
 	top.Dialog.confirm("确定要删除该产品信息吗？",function(){
 		$.ajax({
 		     type: "POST",
-		     url: "${ctx}/admin/product!del.action",
+		     url: "${ctx}/admin/test1!del.action",
 		     cache: false,
 		     dataType:"json",
 		     data:{"id":id},
@@ -135,11 +137,14 @@ $(document).ready(function(){
 		window.parent.iframeHeight('querytable');
 	}) 
 });
+
+
 </script>
+
 </head>
 <body>
 <!-- <div id="scrollContent" class="border_gray"> -->
-<form action="${ctx}/admin/product!query.action" method="post" target="querytable" id="frm">
+<form action="${ctx}/admin/test1!query.action" method="post" target="querytable" id="frm">
 <input type="hidden" name="totalCount" id="totalCount" value="${totalCount }" />
 <input type="hidden" name="totalPage" id="totalPage" value="${totalPage }" />
 <input type="hidden" name="currPage" id="currPage" value="${currPage }" />
@@ -165,38 +170,31 @@ $(document).ready(function(){
 				<td  colspan="11"  align="center">没有找到符合条件的记录</td>
 			</tr>
 		</c:if>
-		<s:iterator value="list" status="st" var="cell">
-		<tr>
-			<!--
-			<td>${st.index+1}</td> 
-			<td>${cell.productCode }</td>
-			<td>${cell.userProductCode}</td>
-			<td>${cell.productName}</td>
-			<td>${cell.typespec }</td>
-			<td> 激活按钮 </td>
-			<td>${cell.mtName }</td>
-			<td>${cell.dsc }</td>
-			  -->
-			<td>C0001</td> 
-			<td>0001</td>
-			<td>鼠标</td>
-			<td>ZA0001</td>
-			<td> <section class="model-1">
+	 	<%-- <s:iterator value="list" status="st" var="cell"> --%>
+			<tr>
+		        <td>c00001</td>
+				<td>z00001</td>
+				<td>苏表</td>
+				<td>za1</td>
+				<td>
+				<section class="model-1">
 				  <div class="checkbox">
 				    <input id="btn_active" type="checkbox" onclick="customerActive();"/>
 				    <label></label>
 				  </div>
 				</section>
 			</td>
-			<td>
-		       <span class="img_edit hand" onclick="editProduct(${cell.id});"></span>
-			   <span class="img_delete hand" onclick="del(${cell.id});"></span>
-	        </td>
-		</tr>
-		</s:iterator>
+
+				<td>
+			       <span class="img_edit hand" onclick="editProduct(${cell.id});"></span>
+				   <span  class="img_delete hand" onclick="del(${cell.id});"></span>
+				</td>
+			</tr>
+		<%-- </s:iterator> --%>
 </table>
 <!-- </div> -->
-<!-- </div> -->
 </form>
+<!-- 激活按钮样式 -->
+
 </body>
 </html>

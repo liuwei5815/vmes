@@ -11,7 +11,7 @@
 var addproduct = function() {
 	var diag = new top.Dialog();
 	diag.Title = "新增产品信息";
-	diag.URL = "product!preAdd.action";
+	diag.URL = "test1!preAdd.action";
 	diag.Height=400;
 	diag.Width=650;
 	diag.show();
@@ -51,7 +51,7 @@ function doSubmit(){
 		  	<input type="hidden" name="totalPage" id="totalPage" value="${totalPage}"/>
 		  	<input type="hidden" name="currPage" id="currPage" value="${currPage}"/>
 			<input type="hidden" name="perPageRows" id="perPageRows" value="${perPageRows}"/> 
-			<table >
+			<table>
 				<!-- <tr>
 					<td>产品名称：</td>
 					<td><input name="productName" type="text" class="validate[length[0,15]]"/></td>
@@ -67,22 +67,24 @@ function doSubmit(){
 				</tr>-->
 				<tr>
 				<td>
-				  <input name="productName" type="text" class="validate[length[0,15]]" placeholder="产品"/>
-				
+				  <input name="productName" type="text" class="validate[length[0,15]]" placeholder="产品" align="center"/>
+				</td>
+			    <td>
 				  <button type="button" onclick="return doSubmit()"><span class="icon_find">查询</span></button>
 				</td>
 			    <td>	
 				 <button onclick="addproduct()" type="button"><span class="icon_add">新增</span></button>
-				
+				 </td>
+				 <td>	
 					<button onclick='return importProduct()' type="button"><span class="icon_add">模板导入</span></button>
 				</td>
-			</tr>
-			</table>		
+				</tr>
+			</table>
 		</s:form>
 	</div>
 	<div id="scrollContent">
 		<iframe scrolling="no" width="100%" frameBorder=0 id="querytable"
-			name="querytable" src="${ctx}/admin/product!query.action"
+			name="querytable" src="${ctx}/admin/test1!list.action"
 			onload="iframeHeight('querytable')" allowTransparency="true"></iframe>
 	</div>
 	<pt:page action="${ctx}/admin/product!query.action"	target="querytable"></pt:page>
