@@ -7,8 +7,90 @@
 <title>Insert title here</title>
 <%@ include file="/admin/jsp/common/common.jsp"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<style>
+.checkbox {
+  position: relative;
+  display: inline-block;
+}
+.checkbox:after, .checkbox:before {
+  font-family: FontAwesome;
+  -webkit-font-feature-settings: normal;
+     -moz-font-feature-settings: normal;
+          font-feature-settings: normal;
+  -webkit-font-kerning: auto;
+     -moz-font-kerning: auto;
+          font-kerning: auto;
+  -webkit-font-language-override: normal;
+     -moz-font-language-override: normal;
+          font-language-override: normal;
+  font-stretch: normal;
+  font-style: normal;
+  font-synthesis: weight style;
+  font-variant: normal;
+  font-weight: normal;
+  text-rendering: auto;
+}
+.checkbox label {
+  width: 55px;
+  height: 25px;
+  background: #ccc;
+  position: relative;
+  display: inline-block;
+  border-radius: 46px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.checkbox label:after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  left: 0;
+  top: -1px;
+  z-index: 2;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.checkbox input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}   
+
+.checkbox input:hover + label:after {
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+}
+.checkbox input:checked + label:after {
+  left: 30px;
+}
+ 
+.model-1 .checkbox input:checked + label {
+  background: green;
+}
+</style>
 <script type='text/javascript' src="${ctx }/admin/js/page.js"></script>
 <script>
+//客户激活或者取消激活按钮
+function customerActive() {
+	//ar btn_active = document.getElementById("btn_active");
+	if($('#btn_active').is(':checked')) {
+		alert("激活");
+		//点击激活后后台业务逻辑程序
+	} else{
+		alert("取消激活");
+		//点击取消激活后业务逻辑程序
+	}
+	
+}
+
 function editProduct(id){
 	var diag = new top.Dialog();
 	diag.Title = "编辑产品信息";
@@ -63,13 +145,19 @@ $(document).ready(function(){
 <input type="hidden" name="currPage" id="currPage" value="${currPage }" />
 <table class="tableStyle" id="checkboxTable" style="text-align: center">
 		<tr>
- 			<th class="th">序号</th> 
+ 			<!--<th class="th">序号</th> 
 			<th class="th">系统产品编号</th>
 			<th class="th">用户产品编号</th>
 			<th class="th">产品名称</th>
 			<th class="th">规格/型号</th>
 			<th class="th">产品类型</th>
 			<th class="th">备注</th>
+			<th class="th">操作</th>-->
+			<th class="th">系统产品号</th>
+			<th class="th">用户产品号</th>
+			<th class="th">产品名称</th>
+			<th class="th">规格/型号</th>
+			<th class="th">激活状态</th>
 			<th class="th">操作</th>
 		</tr>
 		<c:if test="${fn:length(list) == 0}">
@@ -79,13 +167,27 @@ $(document).ready(function(){
 		</c:if>
 		<s:iterator value="list" status="st" var="cell">
 		<tr>
-			<td>${st.index+1}</td>
+			<!--
+			<td>${st.index+1}</td> 
 			<td>${cell.productCode }</td>
 			<td>${cell.userProductCode}</td>
 			<td>${cell.productName}</td>
 			<td>${cell.typespec }</td>
+			<td> 激活按钮 </td>
 			<td>${cell.mtName }</td>
 			<td>${cell.dsc }</td>
+			  -->
+			<td>C0001</td> 
+			<td>0001</td>
+			<td>鼠标</td>
+			<td>ZA0001</td>
+			<td> <section class="model-1">
+				  <div class="checkbox">
+				    <input id="btn_active" type="checkbox" onclick="customerActive();"/>
+				    <label></label>
+				  </div>
+				</section>
+			</td>
 			<td>
 		       <span class="img_edit hand" onclick="editProduct(${cell.id});"></span>
 			   <span class="img_delete hand" onclick="del(${cell.id});"></span>
@@ -93,7 +195,7 @@ $(document).ready(function(){
 		</tr>
 		</s:iterator>
 </table>
-</div>
+<!-- </div> -->
 <!-- </div> -->
 </form>
 </body>

@@ -51,8 +51,8 @@ function doSubmit(){
 		  	<input type="hidden" name="totalPage" id="totalPage" value="${totalPage}"/>
 		  	<input type="hidden" name="currPage" id="currPage" value="${currPage}"/>
 			<input type="hidden" name="perPageRows" id="perPageRows" value="${perPageRows}"/> 
-			<table>
-				<tr>
+			<table >
+				<!-- <tr>
 					<td>产品名称：</td>
 					<td><input name="productName" type="text" class="validate[length[0,15]]"/></td>
 					<td>系统产品编号：</td>
@@ -64,8 +64,20 @@ function doSubmit(){
 						<button onclick="addproduct()" type="button"><span class="icon_add">新增</span></button>
 						<button onclick='return importProduct()' type="button"><span class="icon_add">批量导入</span></button>
 					</td>
-				</tr>
-			</table>
+				</tr>-->
+				<tr>
+				<td>
+				  <input name="productName" type="text" class="validate[length[0,15]]" placeholder="产品"/>
+				
+				  <button type="button" onclick="return doSubmit()"><span class="icon_find">查询</span></button>
+				</td>
+			    <td>	
+				 <button onclick="addproduct()" type="button"><span class="icon_add">新增</span></button>
+				
+					<button onclick='return importProduct()' type="button"><span class="icon_add">模板导入</span></button>
+				</td>
+			</tr>
+			</table>		
 		</s:form>
 	</div>
 	<div id="scrollContent">

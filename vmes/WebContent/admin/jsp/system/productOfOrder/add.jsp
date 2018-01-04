@@ -90,11 +90,20 @@ function chooseShip(tableId,showDomId,nameCn,gxId,pkId){
 	<input type="hidden" name="department.pid" value="${pid }" />
 	<table width="100%" class="tableStyle" transmode="true">
 	<tr class="validate">
-		<td>用户产品编号：</td>
+		<!-- <td>用户产品编号：</td>
+		<td>
+			<input type="text" name="product.userProductCode" class="validate[length[0,15]]"/>
+		</td> -->
+		<td>系统产品编号：</td>
+		<td>
+			C0001
+		</td>
+	</tr>
+	<tr class="validate">
+	<td>用户产品编号：</td>
 		<td>
 			<input type="text" name="product.userProductCode" class="validate[length[0,15]]"/>
 		</td>
-	</tr>
 	<tr class="validate">
 		<td>产品名称：</td>
 		<td>
@@ -116,7 +125,7 @@ function chooseShip(tableId,showDomId,nameCn,gxId,pkId){
 			<span class="star"> *</span>
 		</td>
 	</tr> -->
-	<tr  style="border: medium none; background-color: transparent;" yzid="2">
+	<!--<tr  style="border: medium none; background-color: transparent;" yzid="2">
 		<td style="text-align: right; padding-top: 3px; padding-bottom: 3px; border: medium none;">货品类型：</td>
 			<td style="padding-top: 3px; padding-bottom: 3px; border: medium none;">
 				<div style="float: left;"><input class="textinput simple validate[required,length[0,6]]" value="" id="type_lable" readonly="readonly" type="text">
@@ -129,7 +138,7 @@ function chooseShip(tableId,showDomId,nameCn,gxId,pkId){
 		<td>
 			<input type="text" name="product.dsc"  class="validate[length[0,20]]"/>
 		</td>
-	</tr>
+	</tr>-->
 	<tr>
 		<td colspan="2"></td>
 	</tr>
