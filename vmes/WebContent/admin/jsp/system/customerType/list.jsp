@@ -73,25 +73,16 @@ function del(id){
 		</tr>
 	</c:if>
 
-<%-- 	<s:iterator value="list" status="st" var="cell">
+ 	<s:iterator value="list" status="st" var="cell">
 		<tr>
-			<td>化工</td>
-			<td>${cell.customerCode }</td>
-			<td></td>
+			<td>${cell.typeName}</td>
+			<td>${cell.description}</td>
 			<td width="70" style = "text-align: center">
 				<span class="img_edit hand" title="编辑"	onclick="openEditWin('${cell.id}');"></span>
 				<span class="img_delete hand" title="删除" onclick="del('${cell.id}');"></span>
 			</td>
 		</tr>
-	</s:iterator> --%>
-	<tr>
-		<td>化工</td>
-		<td></td>
-		<td width="70" style = "text-align: center">
-			<span class="img_edit hand" title="编辑"	onclick="openEditWin('${cell.id}');"></span>
-			<span class="img_delete hand" title="删除" onclick="del('${cell.id}');"></span>
-		</td>
-	</tr>
+	</s:iterator> 
 </table>
 </form>
 </div>

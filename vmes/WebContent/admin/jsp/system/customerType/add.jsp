@@ -61,14 +61,14 @@ $(document).ready(function(){
 	<tr>
 		<td>客户类型：</td>
 		<td>
-			<input type="text" name="customer.type" class="validate[required,length[0,15]]" />
+			<input type="text" name="customerType.typeName" class="validate[required,length[0,15]]" />
 			<span class="star"> *</span>
 		</td>
 	</tr>
 	<tr class="validate">
 		<td>客户说明：</td>
 		<td>
-			<input type="text" name="customer.description" class="validate[required,length[0,15]]" />
+			<input type="text" name="customerType.description" class="validate[required,length[0,15]]" />
 			<span class="star"> *</span>
 		</td>
 	</tr>
