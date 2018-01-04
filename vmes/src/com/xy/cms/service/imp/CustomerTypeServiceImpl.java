@@ -90,9 +90,8 @@ public class CustomerTypeServiceImpl extends BaseDAO implements CustomerTypeServ
 
 
 	@Override
-	public void removeCustomerType(String typeName) throws BusinessException {
-		String hql = "from CustomerType ct where ct.typeName = '"+typeName+"' ";
-		CustomerType test = (CustomerType)this.find(hql).get(0);
+	public void removeCustomerType(String id) throws BusinessException {
+		CustomerType test = (CustomerType) this.get(CustomerType.class,id);
 		
 		if(test == null)
 			throw new BusinessException("查询对象为空");

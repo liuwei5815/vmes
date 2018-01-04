@@ -36,12 +36,12 @@ function del(id){
 	top.Dialog.confirm("确定要删除该客户信息吗？",function(){
 		$.ajax({
 		     type: "POST",
-		     url: "${ctx}/admin/customerType!del.action",
+		     url: "${ctx}/admin/customerType!delete.action",
 		     cache: false,
 		     dataType:"json",
 		     data:{"id":id},
 		     success: function(data){
-	     		if(data.successflag=="1"){
+	     		if(data.code=="1"){
 	     			top.Dialog.alert("删除成功",function(){
 	    				$("#frm").submit();	
 	    	    	});
@@ -79,7 +79,7 @@ function del(id){
 			<td>${cell.description}</td>
 			<td width="70" style = "text-align: center">
 				<span class="img_edit hand" title="编辑"	onclick="openEditWin('${cell.typeName}');"></span>
-				<span class="img_delete hand" title="删除" onclick="del('${cell.typeName}');"></span>
+				<span class="img_delete hand" title="删除" onclick="del('${cell.id}');"></span>
 			</td>
 		</tr>
 	</s:iterator> 

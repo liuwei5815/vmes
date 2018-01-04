@@ -38,18 +38,18 @@ public class CustomerTypeAction extends BaseAction {
 		return "list";
 	}
 	
-//	public String query() throws Exception{
-//		this.queryTemplate(new BaseActionQueryPageCallBack() {
-//			
-//			@Override
-//			public QueryResult execute(Map pageMap) throws BusinessException {
-//				String cusName = request.getParameter("cusName");
-//				pageMap.put("cusName", cusName);
-//				return customerService.queryCustomerPage(pageMap);
-//			}
-//		});
-//		return "list";
-//	}
+	public String query() throws Exception{
+		this.queryTemplate(new BaseActionQueryPageCallBack() {
+			
+			@Override
+			public QueryResult execute(Map pageMap) throws BusinessException {
+				String cusName = request.getParameter("name");
+				pageMap.put("cusName", cusName);
+				return customerTypeService.queryCustomerTypePage(pageMap);
+			}
+		});
+		return "list";
+	}
 	
 	public String preEdit(){
 		String typeName = request.getParameter("typeName");
@@ -96,14 +96,14 @@ public class CustomerTypeAction extends BaseAction {
 	}
 	
 	public void delete(){
-		String typeName = request.getParameter("typeName");
+		String id = request.getParameter("id");
 		Map param = new HashMap();
 		PrintWriter writer= null;
 		try {
 			writer = response.getWriter();
-			if(CommonFunction.isNull(typeName))
-				throw new BusinessException("typeName不能为空");
-			customerTypeService.removeCustomerType(typeName);
+			if(CommonFunction.isNull(id))
+				throw new BusinessException("id不能为空");
+			customerTypeService.removeCustomerType(id);
 			param.put("code",1);
 			param.put("msg","删除成功");
 		} catch (BusinessException e) {
