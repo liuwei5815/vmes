@@ -2,6 +2,7 @@ package com.xy.cms.service.imp;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -55,6 +56,11 @@ public class CustomerTypeServiceImpl extends BaseDAO implements CustomerTypeServ
 		try {
 			if(test == null){
 				throw new BusinessException("参数错误");
+			}
+			String hql = "from CustomerType ct where ct.typeName = '"+test.getTypeName()+"' ";
+			List temp = this.find(hql);
+			if(temp.size()!=0) {
+				throw new BusinessException("已存在该客户类型");
 			}
 			String uuid = UUID.randomUUID().toString();
 			test.setId(uuid);
