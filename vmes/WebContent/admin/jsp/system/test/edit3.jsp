@@ -100,7 +100,7 @@ $(document).ready(function(){
 	</tr>
 </table> 
 </body>
-</html>
+</html> 
    
 
 
