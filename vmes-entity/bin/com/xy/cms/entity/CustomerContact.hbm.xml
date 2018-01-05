@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.CustomerContact" table="customer_contact">
+		<id name="id" type="java.lang.String">
+            <column name="id" />
+        </id>
+        <property name="customerId" type="java.lang.Long">
+            <column name="customer_id">
+             </column>
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="name">
+             </column>
+        </property>
+         <property name="phone" type="java.lang.String">
+            <column name="phone">
+             </column>
+        </property>
+        <property name="tel" type="java.lang.String">
+            <column name="tel">
+             </column>
+        </property>
+        <property name="isdefault" type="java.lang.Integer">
+            <column name="isdefault">
+             </column>
+        </property>
+
+	</class>
+</hibernate-mapping>
