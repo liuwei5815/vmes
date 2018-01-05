@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/com/xy/cms/entity=UTF-8
 encoding//src/com/xy/cms/entity/Department.java=UTF-8
 encoding//src/com/xy/cms/entity/Orders.java=UTF-8
 encoding//src/com/xy/cms/entity/OrdersDetail.java=UTF-8

@@ -1,8 +1,6 @@
 package com.xy.cms.entity;
 
-/**
- * 产品表
- * */
+
 public class Product {
 	/**
 	 * 主键id
@@ -47,6 +45,15 @@ public class Product {
 	 * 单位
 	 * */
 	private String unit;
+	
+	/**
+	 * 激活状态
+	 */
+    private int activeState;
+
+
+    /** departmentId */
+    private long departmentId;  
 
 	public Long getId() {
 		return id;
@@ -120,6 +127,21 @@ public class Product {
 		this.userProductCode = userProductCode;
 	}
 	
+    public void setActiveState(int activeState){
+        this.activeState = activeState;
+    }
+    
+    public int getActiveState(){
+        return this.activeState;
+    }
 	
+    public long getDepartmentId() {
+        return this.departmentId;
+    }
+
+    public void setDepartmentId(long departmentId) {
+        this.departmentId = departmentId;
+    }
+
 	
 }

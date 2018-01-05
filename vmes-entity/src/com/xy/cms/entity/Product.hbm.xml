@@ -47,5 +47,16 @@
                 <comment>单位</comment>
             </column>
         </property>
+        
+        <property name="activeState" type="java.lang.Integer">
+            <column name="active_state" length="1">
+                <comment>激活状态</comment>
+            </column>
+        </property>
+        <property name="departmentId" type="java.lang.Long">
+            <column name="department_id" >
+                <comment>部门id</comment>
+            </column>
+        </property>
 	</class>
 </hibernate-mapping>

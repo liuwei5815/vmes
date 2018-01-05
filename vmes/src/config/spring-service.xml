@@ -67,14 +67,21 @@
 	<bean id="accountService" class="com.xy.cms.service.imp.AccountServiceImpl" />
 	
 	
+	
 	<bean id="freemarkerConfig" class="com.xy.cms.common.export.FreemarkerConfig">
 			<property name="templateLoaderPath" value="/template">
 			
 			</property>
 	
 	</bean>
+
+	
+	
+	
+	
 	<bean id="testService" class="com.xy.cms.service.imp.TestServiceImpl" />
 	<bean id="testlwService" class="com.xy.cms.service.imp.TestlwServiceImpl" />
 	<bean id="testwkService" class="com.xy.cms.service.imp.TestwkServiceImpl" />
+	<bean id="customerTypeService" class="com.xy.cms.service.imp.CustomerTypeServiceImpl" />
 	
 </beans>

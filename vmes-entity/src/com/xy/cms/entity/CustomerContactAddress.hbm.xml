@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xy.cms.entity.CustomerContactAddress" table="customer_contact_address">
+		<id name="id" type="java.lang.String">
+            <column name="id"/>
+        </id>
+        <property name="ccId" type="java.lang.String">
+            <column name="cc_id">
+                <comment>customer_contact》的主键id</comment>
+            </column>
+        </property>
+        <property name="addressCode" type="java.lang.Long">
+            <column name="address_code">
+                <comment>收货地址的行政区划编码,《sys_region》的区县行政计划编码</comment>
+            </column>
+        </property>
+        <property name="addressLongname" type="java.lang.String">
+            <column name="address_longname">
+                <comment>比如取的洪山区，要记录湖北省武汉市洪山区</comment>
+            </column>
+        </property>
+        <property name="concreteAddress" type="java.lang.String">
+            <column name="concrete_address">
+                <comment>具体的街道名称、小区、楼栋</comment>
+            </column>
+        </property>
+        <property name="isdefault" type="java.lang.Integer">
+            <column name="isdefault" />
+        </property>
+ 
+	</class>
+</hibernate-mapping>

@@ -350,6 +350,15 @@
 		<result name="empinit">/admin/jsp/system/account/emp/init.jsp</result>
 		<result name="list">/admin/jsp/system/account/emp/list.jsp</result>
 	</action> 
+
+
+	<action name="test" class="com.xy.cms.action.system.TestAction">
+		<result name="init">/admin/jsp/system/test/init.jsp</result>
+		<result name="list">/admin/jsp/system/test/list.jsp</result>
+		<result name="edit">/admin/jsp/system/test/edit.jsp</result>
+		<result name="add">/admin/jsp/system/test/add.jsp</result>
+	</action>	
+	
 	
 	 <action name="test1" class="com.xy.cms.action.system.TestAction">
 		<result name="init">/admin/jsp/system/test1/init1.jsp</result>
@@ -357,7 +366,41 @@
 		<result name="edit">/admin/jsp/system/test1/edit1.jsp</result>
 		<result name="add">/admin/jsp/system/test1/add1.jsp</result>
 	</action>	 
+
 	
+	<!-- 客户分类 -->
+    <action name="customerType" class="com.xy.cms.action.system.CustomerTypeAction">
+		<result name="init">/admin/jsp/system/customerType/init.jsp</result>
+		<result name="list">/admin/jsp/system/customerType/list.jsp</result>
+		<result name="edit">/admin/jsp/system/customerType/edit.jsp</result>
+		<result name="add">/admin/jsp/system/customerType/add.jsp</result>
+	</action> 
+	
+	<!--工时单价基础 -->
+	<action name="workerUnitPrice" class="com.xy.cms.action.system.WorkerUnitPrice">
+		<result name="init">/admin/jsp/system/workerUnitPrice/init.jsp</result>
+		<result name="list">/admin/jsp/system/workerUnitPrice/list.jsp</result>
+		<result name="edit">/admin/jsp/system/workerUnitPrice/edit.jsp</result>
+		<result name="add">/admin/jsp/system/workerUnitPrice/add.jsp</result>
+	</action> 
+	
+	<!--生产计划类型 -->
+	<action name="producePlanType" class="com.xy.cms.action.system.ProducePlanType">
+		<result name="init">/admin/jsp/system/producePlanType/init.jsp</result>
+		<result name="list">/admin/jsp/system/producePlanType/list.jsp</result>
+		<result name="edit">/admin/jsp/system/producePlanType/edit.jsp</result>
+		<result name="add">/admin/jsp/system/producePlanType/add.jsp</result>
+	</action> 	
+	
+	
+	
+	
+	<action name="test" class="com.xy.cms.action.system.TestAction">
+		<result name="init">/admin/jsp/system/test/init3.jsp</result>
+		<result name="list">/admin/jsp/system/test/list3.jsp</result>
+		<result name="edit">/admin/jsp/system/test/edit3.jsp</result>
+		<result name="add">/admin/jsp/system/test/add3.jsp</result>
+	</action> 
 	
 	<action name="testlw" class="com.xy.cms.action.system.TestlwAction">
 		<result name="init">/admin/jsp/system/testlw/init.jsp</result>

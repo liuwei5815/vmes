@@ -65,6 +65,12 @@ function doSubmit(){
 		return;
 	}
 	
+	var t_state = $("#state").val();
+	if(t_state == ""){
+		top.Dialog.alert("请输入状态");
+		return;
+	}
+	
 	$("#frm").submit();
 }
 </script>
@@ -83,19 +89,24 @@ function doSubmit(){
 <div style="">
 	<input type="hidden" name="message" id="message" value="${message}" /> 
 	<input type="hidden" name="successflag" id="successflag" value="${successflag}" />
-	<s:form action="admin/test!edit.action" method="post" theme="simple" id="frm">
-	<input type="hidden" name="test.id" id="id" value="${test.id}" />
+	<s:form action="admin/test!add.action" method="post" theme="simple" id="frm">
 	<table width="100%" class="tableStyle" transmode="true">
 			<tr class="validate">
 				<td>编码：</td>
 				<td>
-					<input type="text" id="number" name="test.number" value="${test.number }" />
+					<input type="text" id="number" name="test.number" />
 				</td>
 			</tr>
 			<tr class="validate">
 				<td>名称：</td>
 				<td>
-					<input type="text" id="name" name="test.name" value="${test.name }" />
+					<input type="text" id="name" name="test.name" />
+				</td>
+			</tr>
+			<tr class="validate">
+				<td>状态：</td>
+				<td>
+					<input type="text" id="state" name="test.state" />
 				</td>
 			</tr>
 		<tr>
