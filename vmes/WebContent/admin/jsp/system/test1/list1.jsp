@@ -91,12 +91,11 @@ function customerActive() {
 	}
 	
 }
-
 	
 function editProduct(id){
 	var diag = new top.Dialog();
 	diag.Title = "编辑产品信息";
-	diag.URL = "product!preEdit.action?id="+id;
+	diag.URL = "test1!preEdit.action?id="+id;
 	diag.Height=400;
 	diag.Width=650;
 	diag.show();

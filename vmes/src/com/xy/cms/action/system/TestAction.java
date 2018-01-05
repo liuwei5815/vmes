@@ -25,28 +25,28 @@ public class TestAction  extends BaseAction{
 	}
 	
 	public String list(){
-		this.queryTemplate(new BaseActionQueryPageCallBack() {
-			@Override
-			public QueryResult execute(Map pageMap) throws BusinessException {
-				String name=request.getParameter("name");
-				if(CommonFunction.isNotNull(name)){
-					pageMap.put("name", name);
-				}
-				return testService.queryTestPage(pageMap);
-			}
-		});
+//		this.queryTemplate(new BaseActionQueryPageCallBack() {
+//			@Override
+//			public QueryResult execute(Map pageMap) throws BusinessException {
+//				String name=request.getParameter("name");
+//				if(CommonFunction.isNotNull(name)){
+//					pageMap.put("name", name);
+//				}
+//				return testService.queryTestPage(pageMap);
+//			}
+//		});
 		return "list";
 	}
 	
 	public String preEdit(){
-		String id = request.getParameter("id");
-		try {
-			if(CommonFunction.isNull(id))
-				throw new BusinessException("id不能为空");
-			test = testService.getTest(Integer.parseInt(id));
-		} catch (BusinessException e) {
-			logger.error(e.getMessage(),e);
-		}
+//		String id = request.getParameter("id");
+//	    try {
+//			if(CommonFunction.isNull(id))
+//				throw new BusinessException("id不能为空");
+//			test = testService.getTest(Integer.parseInt(id));
+//		} catch (BusinessException e) {
+//			logger.error(e.getMessage(),e);
+//		}
 		return "edit";
 	}
 	

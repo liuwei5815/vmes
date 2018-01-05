@@ -94,6 +94,8 @@ function chooseShip(tableId,showDomId,nameCn,gxId,pkId){
 		<td>
 			C0001
 		</td>
+	</tr>
+	<tr class="validate">
 		<td>用户产品编号：</td>
 		<td>
 			<input type="text" name="product.userProductCode"  value="${product.userProductCode}"  class="validate[length[0,15]]" />
@@ -126,10 +128,10 @@ function chooseShip(tableId,showDomId,nameCn,gxId,pkId){
 		<td>
 			<input type="text" name="product.dsc" value="${product.dsc}" class="validate[length[0,20]]" />
 		</td>
-	</tr>
+	</tr>-->
 	<tr>
 		<td colspan="2"></td>
-	</tr> -->
+	</tr> 
 	</table>
 	</s:form>
 </div>

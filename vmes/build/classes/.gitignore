@@ -1,2 +1,11 @@
+/applicationContext.xml
 /com/
 /config/
+/datasource.properties
+/freemarker.properties
+/log4j.properties
+/oscache.properties
+/spring-init.properties
+/struts.xml
+/sysconfig.properties
+/template/
