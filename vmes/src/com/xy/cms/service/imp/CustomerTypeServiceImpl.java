@@ -81,6 +81,11 @@ public class CustomerTypeServiceImpl extends BaseDAO implements CustomerTypeServ
 
 	public void upateCustomerType(CustomerType test) throws BusinessException{
 		try {
+			String hql = "from CustomerType ct where ct.typeName = '"+test.getTypeName()+"' ";
+			List temp = this.find(hql);
+			if(temp.size()!=0) {
+				throw new BusinessException("已存在该客户类型，请重新编辑信息");
+			}
 			this.update(test);
 		} catch (DataAccessException e) {
 			throw new BusinessException("修改异常："+e.getMessage(),e);
