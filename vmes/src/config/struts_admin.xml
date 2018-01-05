@@ -68,11 +68,11 @@
 	
 	<!-- 客户信息管理 -->
 	<action name="customerInfo" class="com.xy.cms.action.system.CustomerInfoAction">
-	     <result name="init">/admin/jsp/system/customer/init.jsp</result>
-	     <result name="add">/admin/jsp/system/customer/add.jsp</result>
-	     <result name="edit">/admin/jsp/system/customer/edit.jsp</result>
-	     <result name="list">/admin/jsp/system/customer/list.jsp</result>
-	     <result name="import">/admin/jsp/system/customer/import.jsp</result>
+	     <result name="init">/admin/jsp/system/customerInfo/init.jsp</result>
+	     <result name="add">/admin/jsp/system/customerInfo/add.jsp</result>
+	     <result name="edit">/admin/jsp/system/customerInfo/edit.jsp</result>
+	     <result name="list">/admin/jsp/system/customerInfo/list.jsp</result>
+	     <result name="import">/admin/jsp/system/customerInfo/import.jsp</result>
 	</action>	
 	
 	<!-- 客户类型管理 -->
