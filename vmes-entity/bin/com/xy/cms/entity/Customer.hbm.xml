@@ -34,7 +34,12 @@
         </property>
          <property name="customerCode" type="java.lang.String">
              <column name="customerCode">
-                <comment>状态</comment>
+                <comment>客户编号</comment>
+            </column>
+        </property>
+        <property name="userCusCode" type="java.lang.String">
+             <column name="userCusCode">
+                <comment>用户客户号</comment>
             </column>
         </property>
         <property name="typeId" type="java.lang.String">

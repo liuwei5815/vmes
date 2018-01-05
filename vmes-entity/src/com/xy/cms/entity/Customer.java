@@ -26,6 +26,10 @@ public class Customer implements java.io.Serializable {
 	private String customerCode;
 
 	/**
+	 * 客户用户号
+	 */
+	private String userCusCode;
+	/**
 	 * 客户类型
 	 */
     private String typeId;
@@ -81,7 +85,14 @@ public class Customer implements java.io.Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
+	
+    public void setUserCusCode(String userCusCode){
+        this.userCusCode = userCusCode;
+    }
+    
+    public String getUserCusCode(){
+        return this.userCusCode;
+    }
 	public String getName() {
 		return name;
 	}

@@ -351,13 +351,14 @@
 		<result name="list">/admin/jsp/system/account/emp/list.jsp</result>
 	</action> 
 
-
+<!--  
 	<action name="test" class="com.xy.cms.action.system.TestAction">
 		<result name="init">/admin/jsp/system/test/init.jsp</result>
 		<result name="list">/admin/jsp/system/test/list.jsp</result>
 		<result name="edit">/admin/jsp/system/test/edit.jsp</result>
 		<result name="add">/admin/jsp/system/test/add.jsp</result>
 	</action>	
+-->
 	
 	
 	 <action name="test1" class="com.xy.cms.action.system.TestAction">
@@ -374,6 +375,14 @@
 		<result name="list">/admin/jsp/system/customerType/list.jsp</result>
 		<result name="edit">/admin/jsp/system/customerType/edit.jsp</result>
 		<result name="add">/admin/jsp/system/customerType/add.jsp</result>
+	</action> 
+	
+	<!-- 客户信息 -->
+    <action name="customerInfo" class="com.xy.cms.action.system.CustomerInfoAction">
+		<result name="init">/admin/jsp/system/customerInfo/init.jsp</result>
+		<result name="list">/admin/jsp/system/customerInfo/list.jsp</result>
+		<result name="edit">/admin/jsp/system/customerInfo/edit.jsp</result>
+		<result name="add">/admin/jsp/system/customerInfo/add.jsp</result>
 	</action> 
 	
 	<!--工时单价基础 -->
@@ -396,10 +405,10 @@
 	
 	
 	<action name="test" class="com.xy.cms.action.system.TestAction">
-		<result name="init">/admin/jsp/system/test/init3.jsp</result>
-		<result name="list">/admin/jsp/system/test/list3.jsp</result>
-		<result name="edit">/admin/jsp/system/test/edit3.jsp</result>
-		<result name="add">/admin/jsp/system/test/add3.jsp</result>
+		<result name="init">/admin/jsp/system/test/init2.jsp</result>
+		<result name="list">/admin/jsp/system/test/list2.jsp</result>
+		<result name="edit">/admin/jsp/system/test/edit2.jsp</result>
+		<result name="add">/admin/jsp/system/test/add2.jsp</result>
 	</action> 
 	
 	<action name="testlw" class="com.xy.cms.action.system.TestlwAction">
